@@ -129,4 +129,3 @@ C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\P
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project\obj\Debug\net10.0\Project.pdb
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project\obj\Debug\net10.0\Project.genruntimeconfig.cache
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project\obj\Debug\net10.0\ref\Project.dll
-C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project\obj\Debug\net10.0\Project.sourcelink.json
