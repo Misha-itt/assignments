@@ -24,7 +24,7 @@ namespace Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Order_id")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<int?>("OrdersId")
@@ -33,10 +33,7 @@ namespace Project.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<int>("Prod_id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -57,13 +54,34 @@ namespace Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Order_date")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("UserId")
+                    b.Property<string>("PaymentMethod")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int>("User_id")
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -78,6 +96,9 @@ namespace Project.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Pname")
                         .HasColumnType("longtext");
@@ -96,6 +117,7 @@ namespace Project.Migrations
                         new
                         {
                             Id = 1,
+                            ImageUrl = "https://www.dell.com/en-us/shop/dell-laptops/scr/laptops",
                             Pname = "Laptop",
                             Price = 50000m,
                             Stock = 5
@@ -103,13 +125,15 @@ namespace Project.Migrations
                         new
                         {
                             Id = 2,
-                            Pname = "LaptopCharger",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71udkMozQ3L._AC_SL1489_.jpg",
+                            Pname = "Laptop Charger",
                             Price = 1500m,
                             Stock = 15
                         },
                         new
                         {
                             Id = 3,
+                            ImageUrl = "https://th.bing.com/th/id/R.fc73ae7340a79785ed2ac6655051d0d6?rik=SEMYCU828IxtCw",
                             Pname = "Mobile",
                             Price = 25000m,
                             Stock = 10
@@ -117,9 +141,250 @@ namespace Project.Migrations
                         new
                         {
                             Id = 4,
-                            Pname = "MobileCharger",
+                            ImageUrl = "https://th.bing.com/th/id/OIP.L_XVZQ8Vz9zmYHG-27an_QHaGT?w=208&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+                            Pname = "Mobile Charger",
                             Price = 500m,
                             Stock = 13
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ImageUrl = "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Wireless Mouse",
+                            Price = 800m,
+                            Stock = 20
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ImageUrl = "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Mechanical Keyboard",
+                            Price = 3000m,
+                            Stock = 12
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ImageUrl = "https://m.media-amazon.com/images/I/81zLDfXdsfL.jpg",
+                            Pname = "Gaming Headset",
+                            Price = 2500m,
+                            Stock = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ImageUrl = "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
+                            Pname = "Webcam",
+                            Price = 1200m,
+                            Stock = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ImageUrl = "https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg",
+                            Pname = "USB Hub",
+                            Price = 700m,
+                            Stock = 25
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ImageUrl = "https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg",
+                            Pname = "External Hard Drive",
+                            Price = 4500m,
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ImageUrl = "https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg",
+                            Pname = "SSD 1TB",
+                            Price = 8000m,
+                            Stock = 5
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700223-1a9e1ff1d5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Router",
+                            Price = 3500m,
+                            Stock = 15
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700232-2e6fbbd0b8f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Power Bank",
+                            Price = 1200m,
+                            Stock = 20
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700245-2b6f1dbd0c2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Smartwatch",
+                            Price = 7000m,
+                            Stock = 6
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700256-3a8f1bc2f1f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Tablet",
+                            Price = 15000m,
+                            Stock = 9
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700268-4b9f1bd2f2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Laptop Stand",
+                            Price = 900m,
+                            Stock = 14
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700279-5c9f1bd3f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "HDMI Cable",
+                            Price = 400m,
+                            Stock = 30
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700290-6d9f1bd4f4f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Ethernet Cable",
+                            Price = 350m,
+                            Stock = 40
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700301-7e9f1bd5f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Bluetooth Speaker",
+                            Price = 1800m,
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700312-8f9f1bd6f6f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Microphone",
+                            Price = 2500m,
+                            Stock = 7
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700323-9f9f1bd7f7f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Desk Lamp",
+                            Price = 1200m,
+                            Stock = 12
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700334-af9f1bd8f8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Office Chair",
+                            Price = 5500m,
+                            Stock = 5
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700345-bf9f1bd9f9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Monitor 24 inch",
+                            Price = 12000m,
+                            Stock = 8
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700356-cf9f1bda0a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Monitor 27 inch",
+                            Price = 18000m,
+                            Stock = 5
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700367-df9f1bdb1b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Laptop Sleeve",
+                            Price = 700m,
+                            Stock = 20
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700378-ef9f1bdc2c2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "USB Flash Drive",
+                            Price = 500m,
+                            Stock = 50
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700389-ff9f1bdd3d3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Graphics Card",
+                            Price = 40000m,
+                            Stock = 4
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700400-0f9f1bde4e4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Motherboard",
+                            Price = 15000m,
+                            Stock = 6
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700411-1f9f1bdf5f5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Processor",
+                            Price = 22000m,
+                            Stock = 3
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700422-2f9f1be06f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "RAM 16GB",
+                            Price = 7000m,
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 31,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700433-3f9f1be17f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "RAM 32GB",
+                            Price = 12000m,
+                            Stock = 5
+                        },
+                        new
+                        {
+                            Id = 32,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700444-4f9f1be28f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Cooling Fan",
+                            Price = 1500m,
+                            Stock = 15
+                        },
+                        new
+                        {
+                            Id = 33,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700455-5f9f1be39f9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "CPU Cooler",
+                            Price = 3000m,
+                            Stock = 7
+                        },
+                        new
+                        {
+                            Id = 34,
+                            ImageUrl = "https://images.unsplash.com/photo-1581090700466-6f9f1be4afaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            Pname = "Graphics Card Cooler",
+                            Price = 3500m,
+                            Stock = 6
                         });
                 });
 
@@ -154,7 +419,9 @@ namespace Project.Migrations
 
                     b.HasOne("Product", "Product")
                         .WithMany("OrderItems")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Orders");
 
@@ -165,7 +432,9 @@ namespace Project.Migrations
                 {
                     b.HasOne("User", "User")
                         .WithMany("Orders")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

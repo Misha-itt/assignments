@@ -1,0 +1,96 @@
+.card {
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+.image-container {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.info {
+  margin-top: 10px;
+}
+
+.name {
+  font-size: 14px;
+  color: #212121;
+}
+
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+.stock {
+  font-size: 12px;
+  color: gray;
+}
+
+
+.rating {
+  background: #388e3c;
+  color: white;
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.order-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.order-btn:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

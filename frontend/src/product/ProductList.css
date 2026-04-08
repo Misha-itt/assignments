@@ -1,0 +1,144 @@
+
+.page {
+  background: #f1f3f6;
+  min-height: 100vh;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #c128f0;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.search {
+  width: 500px;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+}
+
+
+.login-btn {
+  background: white;
+  color: #2874f0;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+
+.main {
+  display: flex;
+  margin-top: 10px;
+}
+
+
+.sidebar {
+  width: 20%;
+  background: white;
+  padding: 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: fit-content;
+}
+
+.filter p {
+  margin: 6px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.content {
+  width: 80%;
+  padding: 10px;
+}
+
+
+.title {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+.image-container {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.info {
+  margin-top: 10px;
+}
+
+.name {
+  font-size: 14px;
+  color: #212121;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+.stock {
+  font-size: 12px;
+  color: gray;
+}
+
+
+.rating {
+  background: #388e3c;
+  color: white;
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+
+.empty {
+  text-align: center;
+  color: #999;
+}

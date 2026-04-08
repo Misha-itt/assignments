@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+
+# Build outputs
+bin/
+obj/
+
+# Node / frontend
+node_modules/
+dist/
+.env
+
+# OS files
+Thumbs.db
+.DS_Store
