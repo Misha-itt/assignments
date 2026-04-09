@@ -11,11 +11,10 @@ namespace Project.Repository.Class
             context = db;
         }
 
-        public List<ProductResponseDTO> Get(ProductQueryParams query)
+        public List<Product> Get(ProductQueryParams query)
         {
             var products = context.Products.AsQueryable();
 
-           
             if (!string.IsNullOrEmpty(query.Name))
                 products = products.Where(p => p.Pname.Contains(query.Name));
 
@@ -26,24 +25,13 @@ namespace Project.Repository.Class
                 products = products.Where(p => p.Price <= query.MaxPrice.Value);
 
             if (query.InStock.HasValue && query.InStock.Value)
-                products= products.Where(p => p.Stock > 0);
+                products = products.Where(p => p.Stock > 0);
 
-            var result = products.Select(p => new ProductResponseDTO
-            {
-                Id = p.Id,
-                Pname = p.Pname,
-                Price = p.Price,
-                Stock = p.Stock,
-                ImageUrl = p.ImageUrl,
-            });
-
-            result = result
+            return products
                 .Skip((query.PageNumber - 1) * query.PageSize)
-                .Take(query.PageSize);
-
-            return result.ToList();
+                .Take(query.PageSize)
+                .ToList();
         }
-
         public Product Create(Product p)
         {
             context.Products.Add(p);

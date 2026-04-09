@@ -6,15 +6,19 @@ namespace Project.Services.Class
     public class ProductService : IProductService
     {
         private readonly IProductRepository _repo;
+        private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository repo)
+        public ProductService(IProductRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         public List<ProductResponseDTO> Get(ProductQueryParams query)
         {
-            return _repo.Get(query);
+            var products = _repo.Get(query);
+
+            return _mapper.Map<List<ProductResponseDTO>>(products);
         }
 
         public Product Create(Product p)

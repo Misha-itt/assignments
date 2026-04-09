@@ -25,7 +25,7 @@ function Login() {
       setProfile(profileRes.data);
 
       alert(LOGIN_TEXT.SUCCESS_MESSAGE);
-      navigate('/'); // redirect after login
+      navigate('/'); 
     } catch (err) {
       alert(err.response?.data || LOGIN_TEXT.INVALID_CREDENTIALS);
     } finally {

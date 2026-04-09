@@ -1,57 +1,50 @@
 using Microsoft.AspNetCore.Mvc;
-using Project.Services.Class;
 using Project.Services.Interface;
-using System.Collections.Generic; 
-using Project.Models;
+using Project.DTOs;
 
 [ApiController]
 [Route("api/[controller]")]
 public class OrderController : ControllerBase
 {
-    private  IOrderService _service;
+    private readonly IOrderService _service;
 
     public OrderController(IOrderService service)
     {
         _service = service;
     }
 
-
+ 
     [HttpGet("filter")]
+    [EnableRateLimiting("Fixed")]
     public IActionResult GetOrders([FromQuery] OrderQueryParams query)
     {
         var orders = _service.GetOrders(query);
         return Ok(orders);
     }
 
-
+  
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-        var order = _service.GetById(id);
-
-        if (order == null)
-            return NotFound();
-
+        var order = _service.GetById(id); 
+        if (order == null) return NotFound();
         return Ok(order);
     }
 
-
+   
     [HttpPost]
-    public IActionResult Create(Orders order)
+    public IActionResult Create([FromBody] OrderDTO dto)
     {
-        var createdOrder = _service.Create(order);
-        return Ok(createdOrder);
+        var created = _service.Create(dto); 
+        return Ok(created);
     }
 
    
     [HttpPut("{id}")]
-    public IActionResult Update(int id, Orders order)
+    public IActionResult Update(int id, [FromBody] OrderDTO dto)
     {
-        var updated = _service.Update(id, order);
-
-        if (updated == null)
-            return NotFound();
-
+        var updated = _service.Update(id, dto); 
+        if (updated == null) return NotFound();
         return Ok(updated);
     }
 
@@ -60,10 +53,7 @@ public class OrderController : ControllerBase
     public IActionResult Delete(int id)
     {
         var deleted = _service.Delete(id);
-
-        if (!deleted)
-            return NotFound();
-
+        if (!deleted) return NotFound();
         return Ok("Deleted successfully");
     }
 }

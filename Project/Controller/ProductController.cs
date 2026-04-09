@@ -1,45 +1,49 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Services.Interface;
+using Project.DTOs; 
 
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
-    private IProductService service;
+    private readonly IProductService _service;
 
-    public ProductController(IProductService s)
+    public ProductController(IProductService service)
     {
-        service = s;
+        _service = service;
     }
 
+   
     [HttpGet]
     public IActionResult Get([FromQuery] ProductQueryParams query)
     {
-        var products = service.Get(query);
+        var products = _service.Get(query); 
         return Ok(products);
     }
 
+   
     [HttpPost]
-    public IActionResult Create(Product p)
+    public IActionResult Create([FromBody] ProductDTO dto)
     {
-        return Ok(service.Create(p));
+        var created = _service.Create(dto); 
+        return Ok(created);
     }
 
+    
     [HttpPut("{id}")]
-    public IActionResult Update(int id, Product product)
+    public IActionResult Update(int id, [FromBody] ProductDTO dto)
     {
-        var result = service.Update(id, product);
-        if (result == null) return NotFound();
-
-        return Ok(result);
+        var updated = _service.Update(id, dto); 
+        if (updated == null) return NotFound();
+        return Ok(updated);
     }
 
+  
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var result = service.Delete(id);
-        if (!result) return NotFound();
-
+        var deleted = _service.Delete(id);
+        if (!deleted) return NotFound();
         return Ok();
     }
 }

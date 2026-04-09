@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { registerUser } from '../api';
 import { useNavigate } from 'react-router-dom';
-import { ROLES, REGISTER_TEXT } from './Constants';
+import { ROLES, REGISTER_TEXT } from './Constant';
 import './Register.css';  
 
 function Register() {

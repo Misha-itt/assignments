@@ -30,3 +30,8 @@ export const PAGINATION = {
   next: "Next",
   pageLabel: (page: number) => `Page ${page}`,
 };
+
+export const PAGE ={
+  Pagesize : 5,
+
+};

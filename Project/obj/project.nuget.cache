@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZG8rJwCDsls=",
+  "dgSpecHash": "W0q6MaWrMVc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+  "projectFilePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
@@ -30,7 +32,7 @@
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identity.client\\4.47.2\\microsoft.identity.client.4.47.2.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.19.3\\microsoft.identity.client.extensions.msal.2.19.3.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.17.0\\microsoft.identitymodel.abstractions.8.17.0.nupkg.sha512",
-    "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.1\\microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.logging\\8.17.0\\microsoft.identitymodel.logging.8.17.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.0.1\\microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.0.1\\microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
@@ -66,10 +68,22 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.Identity will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Microsoft.AspNetCore.Identity",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.1 was resolved.",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "libraryId": "AutoMapper",
       "targetGraphs": [
         "net10.0"
       ]
@@ -78,9 +92,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -90,9 +104,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -102,9 +116,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -114,9 +128,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Microsoft.Data.SqlClient",
       "targetGraphs": [
         "net10.0"

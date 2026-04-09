@@ -30,6 +30,8 @@ builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
 
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -58,6 +60,16 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddFixedWindowLimiter("Fixed", opt =>
+    {
+        opt.PermitLimit = 10;             
+        opt.Window = TimeSpan.FromSeconds(10); 
+        opt.QueueLimit = 2;               
+    });
+});
+
 builder.Services.AddAuthorization();
 
 
@@ -69,6 +81,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
+
+app.UseRateLimiter();
 
 app.UseSwagger();
 app.UseSwaggerUI();

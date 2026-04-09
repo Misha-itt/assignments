@@ -1,9 +1,16 @@
-export const getProducts = async (query: string) => {
-  const res = await fetch(`https://localhost:62301/api/Product?${query}`);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { Product } from './ProductCard';
+import { API_BASE_URL } from '../config'; 
 
-  return res.json();
-};
+export const ProductService = createApi({
+  reducerPath: 'ProductService',
+  baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL }),
+  endpoints: (builder) => ({
+    getProducts: builder.query<Product[], string>({
+      query: (query) => `Product?${query}`, 
+    }),
+  }),
+});
+
+export const { useGetProductsQuery } = ProductService;

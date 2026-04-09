@@ -1,6 +1,8 @@
 ﻿using Project.Repository.Interface;
 using Project.Services.Interface;
 using Project.Models;
+using Project.DTOs;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace Project.Services.Class
@@ -8,36 +10,53 @@ namespace Project.Services.Class
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _repo;
+        private readonly IMapper _mapper;
 
-        public OrderService(IOrderRepository repo)
+        public OrderService(IOrderRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
+     
         public List<OrderResponseDTO> GetOrders(OrderQueryParams query)
         {
-            return _repo.GetOrders(query);
-        }
-        public List<Orders> GetAll()
-        {
-            return _repo.GetAll();
+            var orders = _repo.GetOrders(query);                   
+            return _mapper.Map<List<OrderResponseDTO>>(orders);   
         }
 
-        public Orders?GetById(int id)
+     
+        public List<OrderResponseDTO> GetAll()
         {
-            return _repo.GetById(id);
+            var orders = _repo.GetAll();
+            return _mapper.Map<List<OrderResponseDTO>>(orders);
         }
 
-        public Orders Create(Orders order)
+       
+        public OrderResponseDTO? GetById(int id)
         {
-            return _repo.Create(order);
+            var order = _repo.GetById(id);
+            return order == null ? null : _mapper.Map<OrderResponseDTO>(order);
         }
 
-        public Orders? Update(int id, Orders order)
+       
+        public OrderResponseDTO Create(OrderDTO dto)
         {
-            return _repo.Update(id, order);
+            var order = _mapper.Map<Orders>(dto);      
+            var created = _repo.Create(order);
+            return _mapper.Map<OrderResponseDTO>(created);  
         }
 
+      
+        public OrderResponseDTO? Update(int id, OrderDTO dto)
+        {
+            var order = _mapper.Map<Orders>(dto);
+            var updated = _repo.Update(id, order);
+            if (updated == null) return null;
+            return _mapper.Map<OrderResponseDTO>(updated);
+        }
+
+       
         public bool Delete(int id)
         {
             return _repo.Delete(id);

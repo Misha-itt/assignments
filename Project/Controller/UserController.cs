@@ -10,6 +10,7 @@ namespace Project.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+     
 
         public UserController(IUserService userService)
         {
@@ -20,6 +21,9 @@ namespace Project.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var user = await _userService.RegisterAsync(dto.Uname, dto.Email, dto.Password, dto.Phone, dto.Role);
             if (user == null)
                 return BadRequest("User already exists");
@@ -29,8 +33,12 @@ namespace Project.Controllers
 
 
         [HttpPost("login")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var token = await _userService.LoginAsync(dto.Email, dto.Password);
             if (token == null)
                 return Unauthorized("Invalid credentials");

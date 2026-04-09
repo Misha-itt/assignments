@@ -1,109 +1,69 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project.Repository.Interface;
 using Project.Models;
+using Project.Repository.Interface;
 
-namespace Project.Repository.Class
+public class OrderRepository : IOrderRepository
 {
-    public class OrderRepository : IOrderRepository
+    private readonly AppDBContext _context;
+
+    public OrderRepository(AppDBContext context)
     {
-        private readonly AppDBContext _context;
+        _context = context;
+    }
 
-        public OrderRepository(AppDBContext context)
-        {
-            _context = context;
-        }
+    public List<Orders> GetOrders(OrderQueryParams query)
+    {
+        var orders = _context.Orders.Include(o => o.OrderItems).AsQueryable();
 
-       
-        public List<OrderResponseDTO> GetOrders(OrderQueryParams query)
-        {
-            var orders = _context.Orders.AsQueryable();
+        if (!string.IsNullOrEmpty(query.CustomerName))
+            orders = orders.Where(o => o.CustomerName.Contains(query.CustomerName));
 
-            if (!string.IsNullOrEmpty(query.CustomerName))
-            {
-                orders = orders.Where(o => o.CustomerName.Contains(query.CustomerName));
-            }
+        if (query.FromDate.HasValue)
+            orders = orders.Where(o => o.OrderDate >= query.FromDate.Value);
 
-         
-            if (query.FromDate.HasValue)
-            {
-                orders = orders.Where(o => o.OrderDate >= query.FromDate.Value);
-            }
+        if (query.ToDate.HasValue)
+            orders = orders.Where(o => o.OrderDate <= query.ToDate.Value);
 
-            if (query.ToDate.HasValue)
-            {
-                orders = orders.Where(o => o.OrderDate <= query.ToDate.Value);
-            }
+        int pageNumber = query.PageNumber <= 0 ? 1 : query.PageNumber;
+        int pageSize = query.PageSize <= 0 ? 10 : query.PageSize;
 
-           
-            int pageNumber = query.PageNumber <= 0 ? 1 : query.PageNumber;
-            int pageSize = query.PageSize <= 0 ? 10 : query.PageSize;
+        return orders
+            .OrderByDescending(o => o.OrderDate)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+    }
 
-        
-            return orders
-                .OrderByDescending(o => o.OrderDate) 
-                .Select(o => new OrderResponseDTO
-                {
-                    Id = o.Id,
-                    CustomerName = o.CustomerName,
-                    Email = o.Email,
-                    Address = o.Address,
-                    OrderDate = o.OrderDate,
+    public Orders Create(Orders order)
+    {
+        _context.Orders.Add(order);
+        _context.SaveChanges();
+        return order;
+    }
 
-                  
-                    TotalAmount = o.TotalPrice
+    public Orders? Update(int id, Orders order)
+    {
+        var existing = _context.Orders.Find(id);
+        if (existing == null) return null;
 
-                    
-                })
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
-        }
+        existing.CustomerName = order.CustomerName;
+        existing.Email = order.Email;
+        existing.Address = order.Address;
+        existing.OrderDate = order.OrderDate;
+        existing.TotalPrice = order.TotalPrice;
+        existing.PaymentMethod = order.PaymentMethod;
 
-      
-        public List<Orders> GetAll()
-        {
-            return _context.Orders.ToList();
-        }
+        _context.SaveChanges();
+        return existing;
+    }
 
-        public Orders? GetById(int id)
-        {
-            return _context.Orders.FirstOrDefault(o => o.Id == id);
-        }
+    public bool Delete(int id)
+    {
+        var order = _context.Orders.Find(id);
+        if (order == null) return false;
 
-        public Orders Create(Orders order)
-        {
-            _context.Orders.Add(order);
-            _context.SaveChanges();
-            return order;
-        }
-
-        public Orders? Update(int id, Orders order)
-        {
-            var existing = _context.Orders.FirstOrDefault(o => o.Id == id);
-
-            if (existing == null) return null;
-
-            existing.CustomerName = order.CustomerName;
-            existing.Email = order.Email;
-            existing.Address = order.Address;
-            existing.Quantity = order.Quantity;
-            existing.TotalPrice = order.TotalPrice;
-            existing.PaymentMethod = order.PaymentMethod;
-            existing.OrderDate = order.OrderDate;
-
-            _context.SaveChanges();
-            return existing;
-        }
-
-        public bool Delete(int id)
-        {
-            var order = _context.Orders.FirstOrDefault(o => o.Id == id);
-
-            if (order == null) return false;
-
-            _context.Orders.Remove(order);
-            _context.SaveChanges();
-            return true;
-        }
+        _context.Orders.Remove(order);
+        _context.SaveChanges();
+        return true;
     }
 }

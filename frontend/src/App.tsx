@@ -5,6 +5,7 @@ import OrderList from './order/OrderList'
 import { Routes, Route } from "react-router-dom";
 import Cart from "./Cart";
 import Login from "./LoginPages/Login";
+import Register from './LoginPages/Register';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Route path="/" element={<ProductList />} />
       <Route path="/cart" element={<Cart />} /> 
        <Route path="/login" element={<Login />} />
+       <Route path="/register" element={<Register/>} />
     </Routes>
     </>
   )
