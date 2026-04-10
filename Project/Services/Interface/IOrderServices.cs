@@ -6,10 +6,10 @@ namespace Project.Services.Interface
 {
     public interface IOrderService
     {
-        List<Orders> GetAll();
-        Orders? GetById(int id);
-        Orders Create(Orders order);
-        Orders? Update(int id, Orders order);
+       // List<OrderResponseDTO> GetOrders();
+       // OrderResponseDTO? GetById(int id);
+        OrderResponseDTO Create(OrdersDTO order);
+        OrderResponseDTO? Update(int id, OrdersDTO order);
         bool Delete(int id);
 
         List<OrderResponseDTO> GetOrders(OrderQueryParams query);

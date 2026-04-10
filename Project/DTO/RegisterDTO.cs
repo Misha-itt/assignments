@@ -3,7 +3,7 @@ using Project.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-public class RegisterDto
+public class RegisterDTO
 {
     [Required]
     [StringLength(50, MinimumLength = 2)]
@@ -24,13 +24,3 @@ public class RegisterDto
     public UserRole Role { get; set; } = UserRole.Customer;
 }
 
-public class LoginDto
-{
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
-
-    [Required]
-    [MinLength(6)]
-    public string Password { get; set; }
-}

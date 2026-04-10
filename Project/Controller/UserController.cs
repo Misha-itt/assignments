@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Project.Services.Interface;
+using Project.Models;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace Project.Controllers
 {
@@ -19,7 +21,7 @@ namespace Project.Controllers
 
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
+        public async Task<IActionResult> Register([FromBody] RegisterDTO dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -34,7 +36,7 @@ namespace Project.Controllers
 
         [HttpPost("login")]
         [EnableRateLimiting("fixed")]
-        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

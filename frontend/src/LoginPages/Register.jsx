@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../api';
+import { useRegisterUserMutation } from '../api';
 import { useNavigate } from 'react-router-dom';
 import { ROLES, REGISTER_TEXT } from './Constant';
 import './Register.css';  
@@ -15,14 +15,16 @@ function Register() {
   });
   const [loading, setLoading] = useState(false);
 
+    const [registerUser] = useRegisterUserMutation();
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await registerUser(form);
-      alert(res.data.message || REGISTER_TEXT.SUCCESS_MESSAGE);
+        await registerUser(form).unwrap();
+      alert( REGISTER_TEXT.SUCCESS_MESSAGE);
 
       setForm({
         uname: '',

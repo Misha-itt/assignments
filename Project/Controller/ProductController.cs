@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Services.Interface;
-using Project.DTOs; 
+using Project.Models;
+ 
 
 [ApiController]
 [Route("api/[controller]")]

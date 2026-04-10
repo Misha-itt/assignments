@@ -1,17 +1,18 @@
 ﻿using Project.Repository.Interface;
 using Project.Services.Interface;
 
+
 namespace Project.Services.Class
 {
     public class ProductService : IProductService
     {
         private readonly IProductRepository _repo;
-        private readonly IMapper _mapper;
+       
 
-        public ProductService(IProductRepository repo, IMapper mapper)
+        public ProductService(IProductRepository repo)
         {
             _repo = repo;
-            _mapper = mapper;
+            
         }
 
         public List<ProductResponseDTO> Get(ProductQueryParams query)

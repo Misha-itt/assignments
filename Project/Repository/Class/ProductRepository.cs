@@ -11,7 +11,7 @@ namespace Project.Repository.Class
             context = db;
         }
 
-        public List<Product> Get(ProductQueryParams query)
+        public List<ProductResponseDTO> Get(ProductQueryParams query)
         {
             var products = context.Products.AsQueryable();
 

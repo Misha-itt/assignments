@@ -1,23 +1,35 @@
 import { useEffect, useState } from "react";
 import "./Cart.css";
+import { toast } from "react-toastify";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart, placeOrder } from "./order/OrderSlice";
+
+
+interface CartItem {
+  pname: string;
+  price: number;
+}
+
 
 export default function Cart() {
-  const [cart, setCart] = useState<any[]>([]);
-
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCart(storedCart);
-  }, []);
+  const cart = useSelector((state: any) => state.order.cart);
+  const dispatch = useDispatch();
+ 
 
   const handleRemove = (index: number) => {
-    const updated = [...cart];
-    updated.splice(index, 1);
-    setCart(updated);
-    localStorage.setItem("cart", JSON.stringify(updated));
+   dispatch(removeFromCart(index));
+    toast.info("Item removed from cart");
   };
 
-  const handleOrder = (item: any) => {
-    alert(`Order placed for ${item.pname}`);
+
+
+  const handleOrder = (item: CartItem) => {
+    dispatch(placeOrder({
+    items: [item],
+    date: new Date()
+  }));
+
+   toast.success(`Order placed for ${item.pname}`);
   };
 
   return (
@@ -28,7 +40,7 @@ export default function Cart() {
         <p className="empty-cart">Your cart is empty</p>
       ) : (
         <div className="cart-list">
-          {cart.map((item, index) => (
+          {cart.map((item:any ,index:number) => (
             <div key={index} className="cart-item">
               <div className="cart-info">
                 <h4>{item.pname}</h4>

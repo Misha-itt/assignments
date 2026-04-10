@@ -4,12 +4,11 @@ namespace Project.Repository.Interface
 {
     public interface IOrderRepository
     {
-        List<Orders> GetAll();
-        Orders? GetById(int id);
+        //List<Orders> GetOrders();
         Orders Create(Orders order);
         Orders? Update(int id, Orders order);
         bool Delete(int id);
 
-        List<OrderResponseDTO> GetOrders(OrderQueryParams query);
+        List<Orders> GetOrders(OrderQueryParams query);
     }
 }

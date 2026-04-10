@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react";
 import OrderCard, { Order } from "./OrderCard";
+import { useGetOrdersQuery } from "./OrderApi"; 
 import "./OrderList.css";
 
 function OrderList() {
-  const [orders, setOrders] = useState<Order[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  // const [orders, setOrders] = useState<Order[]>([]);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState("");
 
-  // Pagination
+
   const [page, setPage] = useState(1);
   const pageSize = 5;
 
-  // Filters
+
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [userName, setUserName] = useState("");
 
-  const loadOrders = async () => {
-    try {
-      setLoading(true);
-      setError("");
+
 
       const query = new URLSearchParams({
         pageNumber: page.toString(),
@@ -29,25 +27,17 @@ function OrderList() {
         ...(userName && { userName }),
       }).toString();
 
-      const res = await fetch(`https://localhost:62301/api/Orders?${query}`);
-      if (!res.ok) throw new Error("Failed to fetch orders");
+      
+   const {
+    data: orders = [],
+    isLoading: loading,
+    error
+  } = useGetOrdersQuery(query);
 
-      const data: Order[] = await res.json();
-      setOrders(Array.isArray(data) ? data : []);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadOrders();
-  }, [page]);
+    
 
   const handleApplyFilters = () => {
-    setPage(1); // reset page when applying filters
-    loadOrders();
+    setPage(1);
   };
 
   const hasNext = orders.length === pageSize;
@@ -56,7 +46,7 @@ function OrderList() {
     <div className="order-page">
       <h2>Orders</h2>
 
-      {/* Filters */}
+   
       <div className="order-filters">
         <label>
           Start Date:
@@ -89,18 +79,18 @@ function OrderList() {
         <button onClick={handleApplyFilters}>Apply Filters</button>
       </div>
 
-      {/* Loading/Error */}
+     
       {loading && <p>Loading...</p>}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error">Failed to fetch</p>}
 
-      {/* Orders List */}
+     
       {!loading && !error && orders.length === 0 && <p>No orders found</p>}
 
       <div className="orders-grid">
         {orders.map((o) => o && <OrderCard key={o.id} order={o} />)}
       </div>
 
-      {/* Pagination */}
+     
       <div className="pagination">
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           Prev

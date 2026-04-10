@@ -1,7 +1,6 @@
 ﻿using Project.Repository.Interface;
 using Project.Services.Interface;
 using Project.Models;
-using Project.DTOs;
 using AutoMapper;
 using System.Collections.Generic;
 
@@ -26,21 +25,21 @@ namespace Project.Services.Class
         }
 
      
-        public List<OrderResponseDTO> GetAll()
-        {
-            var orders = _repo.GetAll();
-            return _mapper.Map<List<OrderResponseDTO>>(orders);
-        }
+        //public List<OrderResponseDTO> GetAll()
+        //{
+        //    var orders = _repo.GetAll();
+        //    return _mapper.Map<List<OrderResponseDTO>>(orders);
+        //}
 
        
-        public OrderResponseDTO? GetById(int id)
-        {
-            var order = _repo.GetById(id);
-            return order == null ? null : _mapper.Map<OrderResponseDTO>(order);
-        }
+        //public OrderResponseDTO? GetById(int id)
+        //{
+        //    var order = _repo.GetById(id);
+        //    return order == null ? null : _mapper.Map<OrderResponseDTO>(order);
+        //}
 
        
-        public OrderResponseDTO Create(OrderDTO dto)
+        public OrderResponseDTO Create(OrdersDTO dto)
         {
             var order = _mapper.Map<Orders>(dto);      
             var created = _repo.Create(order);
@@ -48,7 +47,7 @@ namespace Project.Services.Class
         }
 
       
-        public OrderResponseDTO? Update(int id, OrderDTO dto)
+        public OrderResponseDTO? Update(int id, OrdersDTO dto)
         {
             var order = _mapper.Map<Orders>(dto);
             var updated = _repo.Update(id, order);

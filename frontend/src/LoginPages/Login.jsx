@@ -1,15 +1,24 @@
 
 import React, { useState } from 'react';
-import { loginUser, getProfile } from '../api';
+import { useLoginUserMutation, useGetProfileQuery } from '../api';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '../AuthSlice';
 import { ROLES, LOGIN_TEXT } from './Constant'
 import './Login.css';  
 
 function Login() {
   const navigate = useNavigate();
+
+   const dispatch = useDispatch();
   const [form, setForm] = useState({ email: '', password: '' });
-  const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loginUser] = useLoginUserMutation();
+
+  const { data: profile } = useGetProfileQuery(undefined, {
+    skip: !localStorage.getItem("token"), 
+  });
+
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -17,12 +26,8 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await loginUser(form);
-      const token = res.data.token || res.data.Token;
-      localStorage.setItem('token', token);
-
-      const profileRes = await getProfile(token);
-      setProfile(profileRes.data);
+      const res = await loginUser(form).unwrap;
+      dispatch(setCredentials(res));
 
       alert(LOGIN_TEXT.SUCCESS_MESSAGE);
       navigate('/'); 

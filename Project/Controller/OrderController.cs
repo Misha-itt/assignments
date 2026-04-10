@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Services.Interface;
-using Project.DTOs;
+using Microsoft.AspNetCore.RateLimiting;
+using Project.Models;
+
 
 [ApiController]
 [Route("api/[controller]")]
@@ -33,7 +35,7 @@ public class OrderController : ControllerBase
 
    
     [HttpPost]
-    public IActionResult Create([FromBody] OrderDTO dto)
+    public IActionResult Create([FromBody] OrdersDTO dto)
     {
         var created = _service.Create(dto); 
         return Ok(created);
@@ -41,7 +43,7 @@ public class OrderController : ControllerBase
 
    
     [HttpPut("{id}")]
-    public IActionResult Update(int id, [FromBody] OrderDTO dto)
+    public IActionResult Update(int id, [FromBody] OrdersDTO dto)
     {
         var updated = _service.Update(id, dto); 
         if (updated == null) return NotFound();
