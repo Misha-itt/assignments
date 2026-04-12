@@ -1,10 +1,12 @@
 import React from "react";
+import { CartItem } from "./OrderSlice";
 
 export type Order = {
   id: number;
   userName: string;
   orderDate: string;
   totalAmount: number;
+   items: CartItem[];
 };
 
 interface Props {

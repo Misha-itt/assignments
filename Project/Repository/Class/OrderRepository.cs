@@ -41,6 +41,19 @@ public class OrderRepository : IOrderRepository
         return order;
     }
 
+    public List<OrderSummaryDTO> GetOrderSummary()
+    {
+        return _context.Orders
+            .GroupBy(o => o.UserId)
+            .Select(g => new OrderSummaryDTO
+            {
+                CustomerId = g.Key,
+                TotalOrders = g.Count(),
+                TotalAmount = g.Sum(x => x.TotalPrice)
+            })
+            .ToList();
+    }
+
     public Orders? Update(int id, Orders order)
     {
         var existing = _context.Orders.Find(id);

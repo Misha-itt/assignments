@@ -35,7 +35,7 @@ using Project.Models;
                     new Product { Id = 9, Pname = "USB Hub", Price = 700, Stock = 25, ImageUrl = "https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg" },
                     new Product { Id = 10, Pname = "External Hard Drive", Price = 4500, Stock = 10, ImageUrl = "https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg" },
                     new Product { Id = 11, Pname = "SSD 1TB", Price = 8000, Stock = 5, ImageUrl = "https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg" },
-                    new Product { Id = 12, Pname = "Router", Price = 3500, Stock = 15, ImageUrl = "https://images.unsplash.com/photo-1581090700223-1a9e1ff1d5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" },
+                    new Product { Id = 12, Pname = "Router", Price = 3500, Stock = 15, ImageUrl = "https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg" },
                     new Product { Id = 13, Pname = "Power Bank", Price = 1200, Stock = 20, ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg" },
                     new Product { Id = 14, Pname = "Smartwatch", Price = 7000, Stock = 6, ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg" },
                     new Product { Id = 15, Pname = "Tablet", Price = 15000, Stock = 9, ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg" },

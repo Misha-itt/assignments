@@ -24,21 +24,12 @@ namespace Project.Services.Class
             return _mapper.Map<List<OrderResponseDTO>>(orders);   
         }
 
-     
-        //public List<OrderResponseDTO> GetAll()
-        //{
-        //    var orders = _repo.GetAll();
-        //    return _mapper.Map<List<OrderResponseDTO>>(orders);
-        //}
 
-       
-        //public OrderResponseDTO? GetById(int id)
-        //{
-        //    var order = _repo.GetById(id);
-        //    return order == null ? null : _mapper.Map<OrderResponseDTO>(order);
-        //}
+        public List<OrderSummaryDTO> GetOrderSummary()
+        {
+            return _repo.GetOrderSummary();
+        }
 
-       
         public OrderResponseDTO Create(OrdersDTO dto)
         {
             var order = _mapper.Map<Orders>(dto);      

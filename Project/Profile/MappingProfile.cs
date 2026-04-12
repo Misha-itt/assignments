@@ -1,4 +1,5 @@
 using AutoMapper;
+using Project.Models;
 
 public class MappingProfile : Profile
 {
@@ -16,8 +17,8 @@ public class MappingProfile : Profile
         CreateMap<ProductResponseDTO, Product>();
 
 
-        CreateMap<Order, OrderDTO>();
-        CreateMap<OrderDTO, Order>();
+        CreateMap<Orders, OrdersDTO>();
+        CreateMap<OrdersDTO, Orders>();
 
      
         CreateMap<OrderItem, OrderItemDTO>();

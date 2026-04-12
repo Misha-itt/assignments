@@ -22,6 +22,10 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    if (!/^\d{10}$/.test(form.phone)) {
+    alert("Enter valid 10-digit phone number");
+    return;
+  }
     try {
         await registerUser(form).unwrap();
       alert( REGISTER_TEXT.SUCCESS_MESSAGE);
@@ -36,8 +40,20 @@ function Register() {
 
       navigate('/login'); 
     } catch (err) {
-      alert(err.response?.data || REGISTER_TEXT.ERROR_MESSAGE);
-    } finally {
+  console.log("FULL ERROR:", err);
+
+  const errors = err?.data?.errors;
+
+  if (errors) {
+    const messages = Object.entries(errors)
+      .map(([field, msgs]) => `${field}: ${msgs.join(", ")}`)
+      .join("\n");
+
+    alert(messages);
+  } else {
+    alert(err?.data?.message || "Registration failed");
+  }
+} finally {
       setLoading(false);
     }
   };

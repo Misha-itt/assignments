@@ -30,7 +30,12 @@ public class ProductController : ControllerBase
         return Ok(created);
     }
 
-    
+    [HttpGet("product-sales-summary")]
+    public IActionResult GetProductSalesSummary()
+    {
+        return Ok(_service.GetProductSalesSummary());
+    }
+
     [HttpPut("{id}")]
     public IActionResult Update(int id, [FromBody] ProductDTO dto)
     {

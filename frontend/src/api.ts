@@ -49,7 +49,7 @@ export const api = createApi({
   endpoints: (builder) => ({
     registerUser: builder.mutation<void, RegisterUserDto>({
       query: (body) => ({
-        url: "user/register",
+        url: "User/register",
         method: "POST",
         body,
       }),
@@ -57,14 +57,14 @@ export const api = createApi({
 
     loginUser: builder.mutation<AuthResponse, LoginUserDto>({
       query: (body) => ({
-        url: "user/login",
+        url: "User/login",
         method: "POST",
         body,
       }),
     }),
 
     getProfile: builder.query<UserProfile, void>({
-      query: () => "user/profile",
+      query: () => "User/profile",
     }),
   }),
 });

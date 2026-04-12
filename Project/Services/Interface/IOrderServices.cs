@@ -13,5 +13,7 @@ namespace Project.Services.Interface
         bool Delete(int id);
 
         List<OrderResponseDTO> GetOrders(OrderQueryParams query);
+        List<OrderSummaryDTO> GetOrderSummary();
+       
     }
 }

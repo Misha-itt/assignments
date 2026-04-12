@@ -11,7 +11,7 @@ namespace Project.Repository.Class
             context = db;
         }
 
-        public List<ProductResponseDTO> Get(ProductQueryParams query)
+        public List<Product> Get(ProductQueryParams query)
         {
             var products = context.Products.AsQueryable();
 
@@ -39,6 +39,23 @@ namespace Project.Repository.Class
             return p;
         }
 
+        public List<ProductSalesDTO> GetProductSalesSummary()
+        {
+            return context.OrderItem
+                .Join(context.Products,
+                      oi => oi.ProductId,  
+                      p => p.Id,            
+                      (oi, p) => new { oi, p })
+                .GroupBy(x => new { x.p.Id, x.p.Pname })
+                .Select(g => new ProductSalesDTO
+                {
+                    ProductId = g.Key.Id,
+                    ProductName = g.Key.Pname,
+                    TotalQuantity = g.Sum(x => x.oi.Quantity),
+                    TotalRevenue = g.Sum(x => x.oi.Quantity * x.oi.Price)
+                })
+                .ToList();
+        }
 
         public Product? Update(int id, Product product)
         {

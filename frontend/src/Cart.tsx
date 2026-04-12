@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+
 import "./Cart.css";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, placeOrder } from "./order/OrderSlice";
+import { RootState } from "./store";
 
 
-interface CartItem {
-  pname: string;
+export interface CartItem {
+  id: number;
+  name: string;
   price: number;
 }
 
-
 export default function Cart() {
-  const cart = useSelector((state: any) => state.order.cart);
+  const cart = useSelector((state: RootState) => state.order.cart);
   const dispatch = useDispatch();
  
 
@@ -24,13 +25,16 @@ export default function Cart() {
 
 
   const handleOrder = (item: CartItem) => {
-    dispatch(placeOrder({
-    items: [item],
-    date: new Date()
+  dispatch(placeOrder({
+    id: Date.now(),
+    userName: "",
+    orderDate: new Date().toISOString(),
+    totalAmount: item.price,
+    items: [item]
   }));
 
-   toast.success(`Order placed for ${item.pname}`);
-  };
+  toast.success(`Order placed for ${item.name}`);
+};
 
   return (
     <div className="cart-container">

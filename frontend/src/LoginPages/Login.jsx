@@ -26,7 +26,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await loginUser(form).unwrap;
+      const res = await loginUser(form).unwrap();
       dispatch(setCredentials(res));
 
       alert(LOGIN_TEXT.SUCCESS_MESSAGE);

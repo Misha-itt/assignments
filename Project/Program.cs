@@ -5,13 +5,20 @@ using System.Text;
 using Project.Services.Interface; 
 using Project.Services.Class;          
 using Project.Repository.Interface; 
-using Project.Repository.Class;    
+using Project.Repository.Class;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
-
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 builder.Services.AddCors(options =>
 {
@@ -25,7 +32,7 @@ builder.Services.AddCors(options =>
 });
 
 
-var connectionString = "server=localhost;database=ormss;user=root;password=Tiger";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
@@ -35,6 +42,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton<JwtService>();
 
 
@@ -62,7 +70,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddRateLimiter(options =>
 {
-    options.AddFixedWindowLimiter("Fixed", opt =>
+    options.AddFixedWindowLimiter("fixed", opt =>
     {
         opt.PermitLimit = 10;             
         opt.Window = TimeSpan.FromSeconds(10); 
@@ -79,6 +87,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
 
@@ -89,9 +98,10 @@ app.UseSwaggerUI();
 
 app.UseCors("AllowReact");
 
-
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

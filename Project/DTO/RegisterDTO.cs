@@ -18,7 +18,8 @@ public class RegisterDTO
     public string Password { get; set; }
 
     [Required]
-    [Phone]
+    [RegularExpression(@"^\d{10}$", ErrorMessage = "Enter valid 10-digit phone number")]
+
     public string Phone { get; set; }
 
     public UserRole Role { get; set; } = UserRole.Customer;

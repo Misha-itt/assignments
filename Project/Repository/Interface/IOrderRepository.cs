@@ -10,5 +10,8 @@ namespace Project.Repository.Interface
         bool Delete(int id);
 
         List<Orders> GetOrders(OrderQueryParams query);
+
+        List<OrderSummaryDTO> GetOrderSummary();
+      
     }
 }

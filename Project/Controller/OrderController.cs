@@ -17,7 +17,7 @@ public class OrderController : ControllerBase
 
  
     [HttpGet("filter")]
-    [EnableRateLimiting("Fixed")]
+    [EnableRateLimiting("fixed")]
     public IActionResult GetOrders([FromQuery] OrderQueryParams query)
     {
         var orders = _service.GetOrders(query);
@@ -25,14 +25,6 @@ public class OrderController : ControllerBase
     }
 
   
-    [HttpGet("{id}")]
-    public IActionResult GetById(int id)
-    {
-        var order = _service.GetById(id); 
-        if (order == null) return NotFound();
-        return Ok(order);
-    }
-
    
     [HttpPost]
     public IActionResult Create([FromBody] OrdersDTO dto)
@@ -50,7 +42,12 @@ public class OrderController : ControllerBase
         return Ok(updated);
     }
 
-   
+    [HttpGet("order-summary")]
+    public IActionResult GetOrderSummary()
+    {
+        return Ok(_service.GetOrderSummary());
+    }
+
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
