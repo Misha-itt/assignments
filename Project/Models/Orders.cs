@@ -27,7 +27,6 @@ namespace Project.Models
 
         public DateTime OrderDate { get; set; }
 
-
         public int UserId { get; set; }
 
         public User? User { get; set; }

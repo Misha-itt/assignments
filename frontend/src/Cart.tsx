@@ -47,7 +47,7 @@ export default function Cart() {
           {cart.map((item:any ,index:number) => (
             <div key={index} className="cart-item">
               <div className="cart-info">
-                <h4>{item.pname}</h4>
+                <h4>{item.name}</h4>
                 <p>₹{item.price}</p>
               </div>
 

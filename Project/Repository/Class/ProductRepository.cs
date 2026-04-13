@@ -16,43 +16,51 @@ namespace Project.Repository.Class
             var products = context.Products.AsQueryable();
 
             if (!string.IsNullOrEmpty(query.Name))
-                products = products.Where(p => p.Pname.Contains(query.Name));
+                products = products.Where(product => product.Pname.Contains(query.Name));
 
             if (query.MinPrice.HasValue)
-                products = products.Where(p => p.Price >= query.MinPrice.Value);
+                products = products.Where(product => product.Price >= query.MinPrice.Value);
 
             if (query.MaxPrice.HasValue)
-                products = products.Where(p => p.Price <= query.MaxPrice.Value);
+                products = products.Where(product => product.Price <= query.MaxPrice.Value);
 
             if (query.InStock.HasValue && query.InStock.Value)
-                products = products.Where(p => p.Stock > 0);
+                products = products.Where(product => product.Stock > 0);
 
             return products
+                .Select(product => new Product 
+                {
+                    Id = product.Id,
+                    Pname = product.Pname,
+                    Price = product.Price,
+                    Stock = product.Stock
+                })
                 .Skip((query.PageNumber - 1) * query.PageSize)
                 .Take(query.PageSize)
+
                 .ToList();
         }
-        public Product Create(Product p)
+        public Product Create(Product product)
         {
-            context.Products.Add(p);
+            context.Products.Add(product);
             context.SaveChanges();
-            return p;
+            return product;
         }
 
         public List<ProductSalesDTO> GetProductSalesSummary()
         {
             return context.OrderItem
                 .Join(context.Products,
-                      oi => oi.ProductId,  
-                      p => p.Id,            
-                      (oi, p) => new { oi, p })
-                .GroupBy(x => new { x.p.Id, x.p.Pname })
-                .Select(g => new ProductSalesDTO
+                      orderitem => orderitem.ProductId,  
+                      product => product.Id,            
+                      (orderitem, product) => new { orderitem, product })
+                .GroupBy(x => new { x.product.Id, x.product.Pname })
+                .Select(productsale => new ProductSalesDTO
                 {
-                    ProductId = g.Key.Id,
-                    ProductName = g.Key.Pname,
-                    TotalQuantity = g.Sum(x => x.oi.Quantity),
-                    TotalRevenue = g.Sum(x => x.oi.Quantity * x.oi.Price)
+                    ProductId = productsale.Key.Id,
+                    ProductName = productsale.Key.Pname,
+                    TotalQuantity = productsale.Sum(x => x.orderitem.Quantity),
+                    TotalRevenue = productsale.Sum(x => x.orderitem.Quantity * x.orderitem.Price)
                 })
                 .ToList();
         }

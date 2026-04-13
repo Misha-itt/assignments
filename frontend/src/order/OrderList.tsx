@@ -4,10 +4,7 @@ import { useGetOrdersQuery } from "./OrderApi";
 import "./OrderList.css";
 
 function OrderList() {
-  // const [orders, setOrders] = useState<Order[]>([]);
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState("");
-
+  
 
   const [page, setPage] = useState(1);
   const pageSize = 5;

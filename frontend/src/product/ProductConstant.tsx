@@ -32,6 +32,6 @@ export const PAGINATION = {
 };
 
 export const PAGE ={
-  Pagesize : 5,
+  Pagesize : 20,
 
 };

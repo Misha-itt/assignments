@@ -26,7 +26,7 @@ function ProductCard({ product }: { product: Product }) {
   const handleOrderNow = () => {
     dispatch(placeOrder({
       id: Date.now(),
-      userName: "Misha",
+      userName: "",
       orderDate: new Date().toISOString(),
       totalAmount: product.price,
       items: [{

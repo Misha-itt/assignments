@@ -16,6 +16,7 @@ function App() {
     <>
       <Routes>
       <Route path="/" element={<ProductList />} />
+      <Route path="/orders"element = {<OrderList/>}/>
       <Route path="/cart" element={
         <ProtectedRoute> <Cart /></ProtectedRoute>
       }

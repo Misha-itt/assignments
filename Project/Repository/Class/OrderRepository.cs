@@ -13,16 +13,18 @@ public class OrderRepository : IOrderRepository
 
     public List<Orders> GetOrders(OrderQueryParams query)
     {
-        var orders = _context.Orders.Include(o => o.OrderItems).AsQueryable();
+        var orders = _context.Orders
+            .AsNoTracking()
+            .AsQueryable();
 
         if (!string.IsNullOrEmpty(query.CustomerName))
-            orders = orders.Where(o => o.CustomerName.Contains(query.CustomerName));
+            orders = orders.Where(orders => orders.CustomerName.Contains(query.CustomerName));
 
         if (query.FromDate.HasValue)
-            orders = orders.Where(o => o.OrderDate >= query.FromDate.Value);
+            orders = orders.Where(orders => orders.OrderDate >= query.FromDate.Value);
 
         if (query.ToDate.HasValue)
-            orders = orders.Where(o => o.OrderDate <= query.ToDate.Value);
+            orders = orders.Where(orders => orders.OrderDate <= query.ToDate.Value);
 
         int pageNumber = query.PageNumber <= 0 ? 1 : query.PageNumber;
         int pageSize = query.PageSize <= 0 ? 10 : query.PageSize;
@@ -31,6 +33,24 @@ public class OrderRepository : IOrderRepository
             .OrderByDescending(o => o.OrderDate)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
+            
+            .Select(order => new Orders
+            {
+                Id = order.Id,
+                CustomerName = order.CustomerName,
+                Email = order.Email,
+                OrderDate = order.OrderDate,
+                TotalPrice = order.TotalPrice,
+
+               OrderItems = order.OrderItems.Select(i => new OrderItem
+                {
+                    Id = i.Id,
+                    ProductId = i.ProductId,
+                  
+                    Quantity = i.Quantity,
+                    Price = i.Price
+                }).ToList()
+            })
             .ToList();
     }
 
@@ -44,12 +64,13 @@ public class OrderRepository : IOrderRepository
     public List<OrderSummaryDTO> GetOrderSummary()
     {
         return _context.Orders
-            .GroupBy(o => o.UserId)
-            .Select(g => new OrderSummaryDTO
+            .AsNoTracking()
+            .GroupBy(order => order.UserId)
+            .Select(ordersummary => new OrderSummaryDTO
             {
-                CustomerId = g.Key,
-                TotalOrders = g.Count(),
-                TotalAmount = g.Sum(x => x.TotalPrice)
+                CustomerId = ordersummary.Key,
+                TotalOrders = ordersummary.Count(),
+                TotalAmount = ordersummary.Sum(x => x.TotalPrice)
             })
             .ToList();
     }
