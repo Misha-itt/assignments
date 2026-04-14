@@ -143,3 +143,13 @@ C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\p
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\obj\Debug\net10.0\Project.csproj.Up2Date
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\obj\Debug\net10.0\Project.genruntimeconfig.cache
 C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\obj\Debug\net10.0\ref\Project.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.AspNetCore.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project\bin\Debug\net10.0\Serilog.Sinks.File.dll
+C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

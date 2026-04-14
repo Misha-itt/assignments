@@ -10,17 +10,21 @@ namespace Project.Services.Class
     {
         private readonly IOrderRepository _repo;
         private readonly IMapper _mapper;
+        private readonly ILogger<OrderService> _logger;
 
-        public OrderService(IOrderRepository repo, IMapper mapper)
+        public OrderService(IOrderRepository repo, IMapper mapper , ILogger<OrderService> logger)
         {
             _repo = repo;
             _mapper = mapper;
+            _logger = logger;
+
         }
 
      
         public List<OrderResponseDTO> GetOrders(OrderQueryParams query)
         {
-            var orders = _repo.GetOrders(query);                   
+            var orders = _repo.GetOrders(query);
+            _logger.LogInformation("Fetching the order", query);
             return _mapper.Map<List<OrderResponseDTO>>(orders);   
         }
 

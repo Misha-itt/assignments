@@ -1,0 +1,13 @@
+2026-04-14 09:48:51.751 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-14 09:48:52.349 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-14 09:48:52.355 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-14 09:48:52.363 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-14 09:48:52.370 +05:30 [INF] Hosting environment: Development
+2026-04-14 09:48:52.377 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-14 10:09:48.624 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-14 10:09:48.928 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-14 10:09:48.937 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-14 10:09:48.947 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-14 10:09:48.954 +05:30 [INF] Hosting environment: Development
+2026-04-14 10:09:48.962 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-14 11:37:21.568 +05:30 [WRN] As of ""2026-04-14T06:07:21.3824162+00:00"", the heartbeat has been running for ""00:00:05.0027763"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.

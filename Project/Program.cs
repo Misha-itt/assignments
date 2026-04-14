@@ -9,6 +9,7 @@ using Project.Repository.Class;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton<JwtService>();
 
 
+
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
 
@@ -77,6 +79,13 @@ builder.Services.AddRateLimiter(options =>
         opt.QueueLimit = 2;               
     });
 });
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 builder.Services.AddAuthorization();
 

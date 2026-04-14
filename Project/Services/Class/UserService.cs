@@ -13,13 +13,15 @@ namespace Project.Services.Class
         private readonly JwtService _jwtService;
         private readonly PasswordHasher<User> _passwordHasher;
         private readonly IMapper _mapper;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(IUserRepository userRepository, JwtService jwtService,IMapper mapper)
+        public UserService(IUserRepository userRepository, JwtService jwtService,IMapper mapper, ILogger<UserService> logger)
         {
             _userRepository = userRepository;
             _jwtService = jwtService;
             _passwordHasher = new PasswordHasher<User>();
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<User?> RegisterAsync(string uname, string email, string password, string phone, UserRole role = UserRole.Customer)
@@ -54,7 +56,8 @@ namespace Project.Services.Class
        
         public async Task<List<User>> GetAllUsersAsync()
         {
-     
+
+          
             return await _userRepository.GetAllUsersAsync();
         }
     }

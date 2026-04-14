@@ -9,16 +9,19 @@ namespace Project.Services.Class
     {
         private readonly IProductRepository _repo;
         private readonly IMapper _mapper;
+        private readonly ILogger<ProductService> _logger;
 
-        public ProductService(IProductRepository repo , IMapper mapper)
+        public ProductService(IProductRepository repo , IMapper mapper , ILogger<ProductService> logger)
         {
             _repo = repo;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public List<ProductResponseDTO> Get(ProductQueryParams query)
         {
             var products = _repo.Get(query);
+            _logger.LogInformation("Fetching the product", query);
             return _mapper.Map<List<ProductResponseDTO>>(products);
 
         }
