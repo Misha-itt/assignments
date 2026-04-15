@@ -4,10 +4,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Project.Models;
 
+
 namespace Project.Services.Class
 {
 
-	public class JwtService
+	public class JwtService 
 	{
 		private readonly IConfiguration _configuration;
 

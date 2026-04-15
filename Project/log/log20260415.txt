@@ -1,0 +1,1306 @@
+2026-04-15 11:31:32.659 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-15 11:31:32.991 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-15 11:31:32.994 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-15 11:31:33.000 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-15 11:31:33.003 +05:30 [INF] Hosting environment: Development
+2026-04-15 11:31:33.005 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-15 11:32:07.861 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-15 11:32:08.175 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 316.3168ms
+2026-04-15 11:32:08.191 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-15 11:32:08.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-15 11:32:08.734 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 11.6026ms
+2026-04-15 11:32:08.745 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-15 11:32:12.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.html - null null
+2026-04-15 11:32:12.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.html - 304 null null 92.8254ms
+2026-04-15 11:32:12.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.css - null null
+2026-04-15 11:32:12.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - null null
+2026-04-15 11:32:12.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - null null
+2026-04-15 11:32:12.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.css - 304 null null 34.3409ms
+2026-04-15 11:32:12.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - 304 null null 34.3345ms
+2026-04-15 11:32:12.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - 304 null null 34.2595ms
+2026-04-15 11:32:12.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-15 11:32:12.804 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.js - null null
+2026-04-15 11:32:12.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - 304 null null 18.3949ms
+2026-04-15 11:32:12.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.js - 304 null null 20.1244ms
+2026-04-15 11:32:12.881 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - null null
+2026-04-15 11:32:13.082 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 200.326ms
+2026-04-15 11:32:25.664 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=5 - null null
+2026-04-15 11:32:25.683 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:32:25.719 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:32:27.665 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:32:27.670 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:32:27.930 +05:30 [INF] Executed DbCommand (89ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:32:27.962 +05:30 [INF] Fetching the product
+2026-04-15 11:32:27.990 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:32:28.029 +05:30 [INF] Executed action ProductController.Get (Project) in 2297.4389ms
+2026-04-15 11:32:28.034 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:32:28.049 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=5 - 200 null application/json; charset=utf-8 2384.3608ms
+2026-04-15 11:33:22.305 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:33:22.316 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:33:22.319 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:33:22.325 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:22.328 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:33:22.382 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:33:22.391 +05:30 [INF] Fetching the product
+2026-04-15 11:33:22.396 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:33:22.403 +05:30 [INF] Executed action ProductController.Get (Project) in 68.26ms
+2026-04-15 11:33:22.409 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:22.414 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 108.5396ms
+2026-04-15 11:33:42.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:33:42.927 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:33:42.930 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:33:42.934 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:42.939 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:33:43.048 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:33:43.055 +05:30 [INF] Fetching the product
+2026-04-15 11:33:43.058 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:33:43.063 +05:30 [INF] Executed action ProductController.Get (Project) in 117.8991ms
+2026-04-15 11:33:43.068 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:43.073 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 155.0327ms
+2026-04-15 11:33:44.165 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:33:44.174 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:33:44.177 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:33:44.181 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:44.185 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:33:44.199 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:33:44.208 +05:30 [INF] Fetching the product
+2026-04-15 11:33:44.210 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:33:44.215 +05:30 [INF] Executed action ProductController.Get (Project) in 23.4797ms
+2026-04-15 11:33:44.221 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:44.224 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 59.2639ms
+2026-04-15 11:33:45.130 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:33:45.139 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:33:45.142 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:33:45.146 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:45.149 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:33:45.159 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:33:45.167 +05:30 [INF] Fetching the product
+2026-04-15 11:33:45.170 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:33:45.174 +05:30 [INF] Executed action ProductController.Get (Project) in 19.8089ms
+2026-04-15 11:33:45.179 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:33:45.182 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 51.2936ms
+2026-04-15 11:34:11.635 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - null null
+2026-04-15 11:34:11.647 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:11.650 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:34:11.660 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:34:11.666 +05:30 [INF] Fetching the product
+2026-04-15 11:34:11.669 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:34:11.674 +05:30 [INF] Executed action ProductController.Get (Project) in 18.9398ms
+2026-04-15 11:34:11.678 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:11.682 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - 200 null application/json; charset=utf-8 46.9411ms
+2026-04-15 11:34:21.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:34:21.702 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:34:21.705 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:34:21.708 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:21.711 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:34:21.724 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:34:21.730 +05:30 [INF] Fetching the product
+2026-04-15 11:34:21.732 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:34:21.738 +05:30 [INF] Executed action ProductController.Get (Project) in 21.7085ms
+2026-04-15 11:34:21.743 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:21.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 51.8223ms
+2026-04-15 11:34:23.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:34:23.625 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:34:23.628 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:34:23.632 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:23.635 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:34:23.646 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:34:23.652 +05:30 [INF] Fetching the product
+2026-04-15 11:34:23.655 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:34:23.660 +05:30 [INF] Executed action ProductController.Get (Project) in 18.5525ms
+2026-04-15 11:34:23.664 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:34:23.667 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 51.4607ms
+2026-04-15 11:35:26.219 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:35:26.231 +05:30 [INF] CORS policy execution failed.
+2026-04-15 11:35:26.234 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-04-15 11:35:26.239 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:35:26.245 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:35:26.257 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:35:26.265 +05:30 [INF] Fetching the product
+2026-04-15 11:35:26.268 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:35:26.275 +05:30 [INF] Executed action ProductController.Get (Project) in 23.4354ms
+2026-04-15 11:35:26.281 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:35:26.286 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 67.3511ms
+2026-04-15 11:38:09.836 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-15 11:38:10.109 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-15 11:38:10.114 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-15 11:38:10.321 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-15 11:38:10.323 +05:30 [INF] Hosting environment: Development
+2026-04-15 11:38:10.325 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\Project
+2026-04-15 11:38:10.926 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-15 11:38:11.128 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 null null 206.9702ms
+2026-04-15 11:38:11.144 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-15 11:38:17.353 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger - null null
+2026-04-15 11:38:17.376 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger - 301 null null 23.3728ms
+2026-04-15 11:38:17.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.html - null null
+2026-04-15 11:38:17.558 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.html - 200 null text/html;charset=utf-8 154.419ms
+2026-04-15 11:38:17.565 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - null null
+2026-04-15 11:38:17.565 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.css - null null
+2026-04-15 11:38:17.566 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - null null
+2026-04-15 11:38:17.566 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.js - null null
+2026-04-15 11:38:17.567 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-15 11:38:17.568 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/_vs/browserLink - null null
+2026-04-15 11:38:17.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-15 11:38:17.612 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.css - 200 152 text/css 47.1176ms
+2026-04-15 11:38:17.615 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.js - 200 null application/javascript;charset=utf-8 49.2253ms
+2026-04-15 11:38:17.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - 200 26479 text/css 75.8251ms
+2026-04-15 11:38:17.647 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - 200 76613 text/javascript 80.3557ms
+2026-04-15 11:38:17.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - 200 418181 text/javascript 88.9298ms
+2026-04-15 11:38:17.667 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/_framework/aspnetcore-browser-refresh.js - 200 14919 application/javascript; charset=utf-8 98.373ms
+2026-04-15 11:38:17.716 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/_vs/browserLink - 200 null text/javascript; charset=UTF-8 147.2217ms
+2026-04-15 11:38:17.886 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - null null
+2026-04-15 11:38:17.909 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - null null
+2026-04-15 11:38:17.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - 200 628 image/png 12.1818ms
+2026-04-15 11:38:17.932 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.6419ms
+2026-04-15 11:38:34.197 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?InStock=true&PageNumber=1&PageSize=20 - null null
+2026-04-15 11:38:34.209 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:38:34.232 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:38:35.750 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:38:35.755 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:38:35.972 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+WHERE `p`.`Stock` > 0
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:38:36.006 +05:30 [INF] Fetching the product
+2026-04-15 11:38:36.035 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:38:36.057 +05:30 [INF] Executed action ProductController.Get (Project) in 1812.9125ms
+2026-04-15 11:38:36.059 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:38:36.074 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?InStock=true&PageNumber=1&PageSize=20 - 200 null application/json; charset=utf-8 1876.5434ms
+2026-04-15 11:38:47.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 11:38:47.419 +05:30 [INF] CORS policy execution successful.
+2026-04-15 11:38:47.426 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:38:47.429 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:38:47.463 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:38:47.465 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 11:38:47.472 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:38:47.476 +05:30 [INF] Fetching the product
+2026-04-15 11:38:47.479 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:38:47.483 +05:30 [INF] Executed action ProductController.Get (Project) in 51.2242ms
+2026-04-15 11:38:47.485 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:38:47.489 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 78.4377ms
+2026-04-15 11:44:54.811 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.html - null null
+2026-04-15 11:44:54.830 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.html - 304 null null 18.1802ms
+2026-04-15 11:44:54.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.css - null null
+2026-04-15 11:44:54.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-15 11:44:54.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - null null
+2026-04-15 11:44:54.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - null null
+2026-04-15 11:44:54.846 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.js - null null
+2026-04-15 11:44:54.847 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/_vs/browserLink - null null
+2026-04-15 11:44:54.847 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-15 11:44:54.853 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.css - 304 null null 8.1165ms
+2026-04-15 11:44:54.857 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - 304 null null 12.3466ms
+2026-04-15 11:44:54.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - 304 null null 17.3823ms
+2026-04-15 11:44:54.867 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - 304 null null 21.4515ms
+2026-04-15 11:44:54.872 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.js - 304 null null 25.9827ms
+2026-04-15 11:44:54.885 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/_framework/aspnetcore-browser-refresh.js - 200 14919 application/javascript; charset=utf-8 37.6427ms
+2026-04-15 11:44:54.895 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.7034ms
+2026-04-15 11:44:55.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - null null
+2026-04-15 11:44:55.021 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - null null
+2026-04-15 11:44:55.028 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - 304 null null 6.901ms
+2026-04-15 11:44:55.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.4111ms
+2026-04-15 11:45:09.430 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - null null
+2026-04-15 11:45:09.438 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 11:45:09.441 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 11:45:09.611 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 11:45:09.616 +05:30 [INF] Fetching the product
+2026-04-15 11:45:09.617 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 11:45:09.620 +05:30 [INF] Executed action ProductController.Get (Project) in 176.8911ms
+2026-04-15 11:45:09.623 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 11:45:09.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - 200 null application/json; charset=utf-8 196.0248ms
+2026-04-15 12:31:44.422 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:62301/api/User/profile - null null
+2026-04-15 12:31:44.433 +05:30 [INF] CORS policy execution successful.
+2026-04-15 12:31:44.436 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:62301/api/User/profile - 204 null null 14.6395ms
+2026-04-15 12:31:44.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/User/profile - null null
+2026-04-15 12:31:44.453 +05:30 [INF] CORS policy execution successful.
+2026-04-15 12:31:44.514 +05:30 [INF] Failed to validate the token.
+System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.MissingMethodException: Method not found: 'Void Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(System.ReadOnlySpan`1<Char>, System.Span`1<Byte>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2026-04-15 12:31:44.542 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+2026-04-15 12:31:44.551 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-15 12:31:44.558 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-04-15 12:31:44.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/User/profile - 401 0 null 122.9305ms
+2026-04-15 12:32:02.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=2&pageSize=20 - null null
+2026-04-15 12:32:02.349 +05:30 [INF] CORS policy execution successful.
+2026-04-15 12:32:02.351 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 12:32:02.354 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 12:32:02.381 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 12:32:02.385 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 12:32:02.399 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_0 OFFSET @__p_0
+2026-04-15 12:32:02.404 +05:30 [INF] Fetching the product
+2026-04-15 12:32:02.406 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 12:32:02.409 +05:30 [INF] Executed action ProductController.Get (Project) in 51.3149ms
+2026-04-15 12:32:02.413 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 12:32:02.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=2&pageSize=20 - 200 null application/json; charset=utf-8 74.7301ms
+2026-04-15 13:22:12.092 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - null null
+2026-04-15 13:22:12.099 +05:30 [INF] CORS policy execution successful.
+2026-04-15 13:22:12.104 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 13:22:12.109 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 13:22:12.149 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 13:22:12.153 +05:30 [INF] Fetching the product
+2026-04-15 13:22:12.155 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 13:22:12.160 +05:30 [INF] Executed action ProductController.Get (Project) in 46.4299ms
+2026-04-15 13:22:12.168 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 13:22:12.172 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 79.6654ms
+2026-04-15 15:12:48.334 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-15 15:12:48.508 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-15 15:12:48.512 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-15 15:12:48.515 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-15 15:12:48.517 +05:30 [INF] Hosting environment: Development
+2026-04-15 15:12:48.519 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-15 15:13:35.931 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-15 15:13:36.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 95.0738ms
+2026-04-15 15:13:36.038 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-15 15:13:36.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-15 15:13:36.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 11.114ms
+2026-04-15 15:13:36.708 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-15 15:13:40.737 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.html - null null
+2026-04-15 15:13:40.817 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.html - 304 null null 79.6981ms
+2026-04-15 15:13:40.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - null null
+2026-04-15 15:13:40.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.css - null null
+2026-04-15 15:13:40.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - null null
+2026-04-15 15:13:40.852 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.css - 304 null null 25.4943ms
+2026-04-15 15:13:40.852 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - 304 null null 25.5149ms
+2026-04-15 15:13:40.852 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - 304 null null 25.8141ms
+2026-04-15 15:13:40.868 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-15 15:13:40.868 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.js - null null
+2026-04-15 15:13:40.882 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - 304 null null 14.0038ms
+2026-04-15 15:13:40.886 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.js - 304 null null 18.5142ms
+2026-04-15 15:13:40.944 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - null null
+2026-04-15 15:13:41.112 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.2758ms
+2026-04-15 15:13:58.787 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - null null
+2026-04-15 15:13:58.805 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-15 15:13:58.827 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-15 15:14:00.116 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 15:14:00.120 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-04-15 15:14:00.303 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`, `p`.`ImageUrl`
+FROM `product` AS `p`
+LIMIT @__p_1 OFFSET @__p_0
+2026-04-15 15:14:00.330 +05:30 [INF] Fetching the product
+2026-04-15 15:14:00.353 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 15:14:00.385 +05:30 [INF] Executed action ProductController.Get (Project) in 1548.5456ms
+2026-04-15 15:14:00.390 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-15 15:14:00.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?PageNumber=1&PageSize=20 - 200 null application/json; charset=utf-8 1615.8618ms
+2026-04-15 15:15:50.889 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:15:50.939 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:17:08.287 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE `ormss`;
+2026-04-15 15:18:14.293 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE `ormss`;
+2026-04-15 15:18:14.425 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:18:14.449 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:18:14.459 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:18:14.472 +05:30 [INF] Applying migration '20260406050837_InitialCreate'.
+2026-04-15 15:18:14.518 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2026-04-15 15:18:14.543 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `product` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Pname` longtext CHARACTER SET utf8mb4 NULL,
+    `Price` decimal(65,30) NOT NULL,
+    `Stock` int NOT NULL,
+    `ImageUrl` longtext CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_product` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:18:14.570 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Users` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Uname` longtext CHARACTER SET utf8mb4 NULL,
+    `Email` longtext CHARACTER SET utf8mb4 NULL,
+    `Password` longtext CHARACTER SET utf8mb4 NULL,
+    `Phone` int NOT NULL,
+    CONSTRAINT `PK_Users` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:18:14.608 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Orders` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `CustomerName` longtext CHARACTER SET utf8mb4 NULL,
+    `Email` longtext CHARACTER SET utf8mb4 NULL,
+    `Address` longtext CHARACTER SET utf8mb4 NULL,
+    `Order_date` longtext CHARACTER SET utf8mb4 NULL,
+    `ProductId` int NOT NULL,
+    `Quantity` int NOT NULL,
+    `PaymentMethod` longtext CHARACTER SET utf8mb4 NULL,
+    `TotalPrice` decimal(65,30) NOT NULL,
+    `OrderDate` datetime(6) NOT NULL,
+    `UserId` int NOT NULL,
+    CONSTRAINT `PK_Orders` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Orders_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:18:14.647 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `OrderItem` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Quantity` int NOT NULL,
+    `Price` decimal(65,30) NOT NULL,
+    `ProductId` int NOT NULL,
+    `OrderId` int NOT NULL,
+    `OrdersId` int NULL,
+    CONSTRAINT `PK_OrderItem` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_OrderItem_Orders_OrdersId` FOREIGN KEY (`OrdersId`) REFERENCES `Orders` (`Id`),
+    CONSTRAINT `FK_OrderItem_product_ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:18:14.660 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `product` (`Id`, `ImageUrl`, `Pname`, `Price`, `Stock`)
+VALUES (1, 'https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D', 'Laptop', 50000.0, 5),
+(2, 'https://m.media-amazon.com/images/I/71udkMozQ3L._AC_SL1489_.jpg', 'Laptop Charger', 1500.0, 15),
+(3, 'https://th.bing.com/th/id/R.fc73ae7340a79785ed2ac6655051d0d6?rik=SEMYCU828IxtCw', 'Mobile', 25000.0, 10),
+(4, 'https://th.bing.com/th/id/OIP.L_XVZQ8Vz9zmYHG-27an_QHaGT?w=208&h=180&c=7&r=0&o=7&pid=1.7&rm=3', 'Mobile Charger', 500.0, 13),
+(5, 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Wireless Mouse', 800.0, 20),
+(6, 'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Mechanical Keyboard', 3000.0, 12),
+(7, 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Gaming Headset', 2500.0, 7),
+(8, 'https://images.unsplash.com/photo-1581092917152-832f081b5b18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Webcam', 1200.0, 8),
+(9, 'https://images.unsplash.com/photo-1587825140708-7f9a4b3bfa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'USB Hub', 700.0, 25),
+(10, 'https://images.unsplash.com/photo-1612831660898-d1b1bdfeb25f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'External Hard Drive', 4500.0, 10),
+(11, 'https://images.unsplash.com/photo-1612831455545-8b497a1b6ec3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'SSD 1TB', 8000.0, 5),
+(12, 'https://images.unsplash.com/photo-1581090700223-1a9e1ff1d5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Router', 3500.0, 15),
+(13, 'https://images.unsplash.com/photo-1581090700232-2e6fbbd0b8f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Power Bank', 1200.0, 20),
+(14, 'https://images.unsplash.com/photo-1581090700245-2b6f1dbd0c2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Smartwatch', 7000.0, 6),
+(15, 'https://images.unsplash.com/photo-1581090700256-3a8f1bc2f1f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Tablet', 15000.0, 9),
+(16, 'https://images.unsplash.com/photo-1581090700268-4b9f1bd2f2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Laptop Stand', 900.0, 14),
+(17, 'https://images.unsplash.com/photo-1581090700279-5c9f1bd3f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'HDMI Cable', 400.0, 30),
+(18, 'https://images.unsplash.com/photo-1581090700290-6d9f1bd4f4f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Ethernet Cable', 350.0, 40),
+(19, 'https://images.unsplash.com/photo-1581090700301-7e9f1bd5f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Bluetooth Speaker', 1800.0, 10),
+(20, 'https://images.unsplash.com/photo-1581090700312-8f9f1bd6f6f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Microphone', 2500.0, 7),
+(21, 'https://images.unsplash.com/photo-1581090700323-9f9f1bd7f7f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Desk Lamp', 1200.0, 12),
+(22, 'https://images.unsplash.com/photo-1581090700334-af9f1bd8f8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Office Chair', 5500.0, 5),
+(23, 'https://images.unsplash.com/photo-1581090700345-bf9f1bd9f9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Monitor 24 inch', 12000.0, 8),
+(24, 'https://images.unsplash.com/photo-1581090700356-cf9f1bda0a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Monitor 27 inch', 18000.0, 5),
+(25, 'https://images.unsplash.com/photo-1581090700367-df9f1bdb1b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Laptop Sleeve', 700.0, 20),
+(26, 'https://images.unsplash.com/photo-1581090700378-ef9f1bdc2c2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'USB Flash Drive', 500.0, 50),
+(27, 'https://images.unsplash.com/photo-1581090700389-ff9f1bdd3d3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Graphics Card', 40000.0, 4),
+(28, 'https://images.unsplash.com/photo-1581090700400-0f9f1bde4e4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Motherboard', 15000.0, 6),
+(29, 'https://images.unsplash.com/photo-1581090700411-1f9f1bdf5f5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Processor', 22000.0, 3),
+(30, 'https://images.unsplash.com/photo-1581090700422-2f9f1be06f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'RAM 16GB', 7000.0, 10),
+(31, 'https://images.unsplash.com/photo-1581090700433-3f9f1be17f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'RAM 32GB', 12000.0, 5),
+(32, 'https://images.unsplash.com/photo-1581090700444-4f9f1be28f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Cooling Fan', 1500.0, 15),
+(33, 'https://images.unsplash.com/photo-1581090700455-5f9f1be39f9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'CPU Cooler', 3000.0, 7),
+(34, 'https://images.unsplash.com/photo-1581090700466-6f9f1be4afaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Graphics Card Cooler', 3500.0, 6);
+2026-04-15 15:18:14.690 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_OrderItem_OrdersId` ON `OrderItem` (`OrdersId`);
+2026-04-15 15:18:14.711 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_OrderItem_ProductId` ON `OrderItem` (`ProductId`);
+2026-04-15 15:18:14.737 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Orders_UserId` ON `Orders` (`UserId`);
+2026-04-15 15:18:14.745 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260406050837_InitialCreate', '8.0.0');
+2026-04-15 15:18:14.750 +05:30 [INF] Applying migration '20260408013432_FixData'.
+2026-04-15 15:18:14.861 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` MODIFY COLUMN `ImageUrl` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:18:14.870 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://www.dell.com/en-us/shop/dell-laptops/scr/laptops'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.878 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/81zLDfXdsfL.jpg'
+WHERE `Id` = 7;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.886 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04'
+WHERE `Id` = 8;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.892 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg'
+WHERE `Id` = 9;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.898 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg'
+WHERE `Id` = 10;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.904 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 11;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.911 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260408013432_FixData', '8.0.0');
+2026-04-15 15:18:14.915 +05:30 [INF] Applying migration '20260409044639_fixchanges'.
+2026-04-15 15:18:14.928 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Uname` = ''
+WHERE `Uname` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:18:14.973 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Uname` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:18:15.031 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Phone` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:18:15.037 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Password` = ''
+WHERE `Password` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.081 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Password` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:18:15.087 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Email` = ''
+WHERE `Email` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.131 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Email` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:18:15.175 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` ADD `Role` int NOT NULL DEFAULT 0;
+2026-04-15 15:18:15.230 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` ADD `UnitPrice` decimal(65,30) NOT NULL DEFAULT 0.0;
+2026-04-15 15:18:15.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.247 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 13;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.254 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 14;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.262 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 15;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.270 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 16;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.278 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 17;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.286 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 18;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.294 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 19;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.302 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 20;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.310 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 21;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.317 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 22;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.326 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 23;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.332 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 24;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.339 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 25;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.345 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 26;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.352 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 27;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.358 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 28;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.365 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 29;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.371 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 30;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.377 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 31;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.384 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 32;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.391 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 33;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.397 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 34;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.403 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260409044639_fixchanges', '8.0.0');
+2026-04-15 15:18:15.407 +05:30 [INF] Applying migration '20260411175218_newupdates'.
+2026-04-15 15:18:15.418 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 12;
+SELECT ROW_COUNT();
+2026-04-15 15:18:15.422 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260411175218_newupdates', '8.0.0');
+2026-04-15 15:18:15.429 +05:30 [INF] Applying migration '20260415094800_UpdateDatabase'.
+2026-04-15 15:18:15.447 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP INDEX `IX_OrderItem_ProductId`;
+2026-04-15 15:20:09.253 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE `ormss`;
+2026-04-15 15:22:15.590 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE `ormss`;
+2026-04-15 15:22:15.719 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:22:15.742 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:22:15.751 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:22:15.765 +05:30 [INF] Applying migration '20260406050837_InitialCreate'.
+2026-04-15 15:22:15.813 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2026-04-15 15:22:15.840 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `product` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Pname` longtext CHARACTER SET utf8mb4 NULL,
+    `Price` decimal(65,30) NOT NULL,
+    `Stock` int NOT NULL,
+    `ImageUrl` longtext CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_product` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:22:15.867 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Users` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Uname` longtext CHARACTER SET utf8mb4 NULL,
+    `Email` longtext CHARACTER SET utf8mb4 NULL,
+    `Password` longtext CHARACTER SET utf8mb4 NULL,
+    `Phone` int NOT NULL,
+    CONSTRAINT `PK_Users` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:22:15.901 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Orders` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `CustomerName` longtext CHARACTER SET utf8mb4 NULL,
+    `Email` longtext CHARACTER SET utf8mb4 NULL,
+    `Address` longtext CHARACTER SET utf8mb4 NULL,
+    `Order_date` longtext CHARACTER SET utf8mb4 NULL,
+    `ProductId` int NOT NULL,
+    `Quantity` int NOT NULL,
+    `PaymentMethod` longtext CHARACTER SET utf8mb4 NULL,
+    `TotalPrice` decimal(65,30) NOT NULL,
+    `OrderDate` datetime(6) NOT NULL,
+    `UserId` int NOT NULL,
+    CONSTRAINT `PK_Orders` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Orders_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:22:15.949 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `OrderItem` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Quantity` int NOT NULL,
+    `Price` decimal(65,30) NOT NULL,
+    `ProductId` int NOT NULL,
+    `OrderId` int NOT NULL,
+    `OrdersId` int NULL,
+    CONSTRAINT `PK_OrderItem` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_OrderItem_Orders_OrdersId` FOREIGN KEY (`OrdersId`) REFERENCES `Orders` (`Id`),
+    CONSTRAINT `FK_OrderItem_product_ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-15 15:22:15.960 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `product` (`Id`, `ImageUrl`, `Pname`, `Price`, `Stock`)
+VALUES (1, 'https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D', 'Laptop', 50000.0, 5),
+(2, 'https://m.media-amazon.com/images/I/71udkMozQ3L._AC_SL1489_.jpg', 'Laptop Charger', 1500.0, 15),
+(3, 'https://th.bing.com/th/id/R.fc73ae7340a79785ed2ac6655051d0d6?rik=SEMYCU828IxtCw', 'Mobile', 25000.0, 10),
+(4, 'https://th.bing.com/th/id/OIP.L_XVZQ8Vz9zmYHG-27an_QHaGT?w=208&h=180&c=7&r=0&o=7&pid=1.7&rm=3', 'Mobile Charger', 500.0, 13),
+(5, 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Wireless Mouse', 800.0, 20),
+(6, 'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Mechanical Keyboard', 3000.0, 12),
+(7, 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Gaming Headset', 2500.0, 7),
+(8, 'https://images.unsplash.com/photo-1581092917152-832f081b5b18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Webcam', 1200.0, 8),
+(9, 'https://images.unsplash.com/photo-1587825140708-7f9a4b3bfa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'USB Hub', 700.0, 25),
+(10, 'https://images.unsplash.com/photo-1612831660898-d1b1bdfeb25f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'External Hard Drive', 4500.0, 10),
+(11, 'https://images.unsplash.com/photo-1612831455545-8b497a1b6ec3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'SSD 1TB', 8000.0, 5),
+(12, 'https://images.unsplash.com/photo-1581090700223-1a9e1ff1d5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Router', 3500.0, 15),
+(13, 'https://images.unsplash.com/photo-1581090700232-2e6fbbd0b8f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Power Bank', 1200.0, 20),
+(14, 'https://images.unsplash.com/photo-1581090700245-2b6f1dbd0c2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Smartwatch', 7000.0, 6),
+(15, 'https://images.unsplash.com/photo-1581090700256-3a8f1bc2f1f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Tablet', 15000.0, 9),
+(16, 'https://images.unsplash.com/photo-1581090700268-4b9f1bd2f2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Laptop Stand', 900.0, 14),
+(17, 'https://images.unsplash.com/photo-1581090700279-5c9f1bd3f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'HDMI Cable', 400.0, 30),
+(18, 'https://images.unsplash.com/photo-1581090700290-6d9f1bd4f4f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Ethernet Cable', 350.0, 40),
+(19, 'https://images.unsplash.com/photo-1581090700301-7e9f1bd5f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Bluetooth Speaker', 1800.0, 10),
+(20, 'https://images.unsplash.com/photo-1581090700312-8f9f1bd6f6f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Microphone', 2500.0, 7),
+(21, 'https://images.unsplash.com/photo-1581090700323-9f9f1bd7f7f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Desk Lamp', 1200.0, 12),
+(22, 'https://images.unsplash.com/photo-1581090700334-af9f1bd8f8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Office Chair', 5500.0, 5),
+(23, 'https://images.unsplash.com/photo-1581090700345-bf9f1bd9f9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Monitor 24 inch', 12000.0, 8),
+(24, 'https://images.unsplash.com/photo-1581090700356-cf9f1bda0a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Monitor 27 inch', 18000.0, 5),
+(25, 'https://images.unsplash.com/photo-1581090700367-df9f1bdb1b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Laptop Sleeve', 700.0, 20),
+(26, 'https://images.unsplash.com/photo-1581090700378-ef9f1bdc2c2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'USB Flash Drive', 500.0, 50),
+(27, 'https://images.unsplash.com/photo-1581090700389-ff9f1bdd3d3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Graphics Card', 40000.0, 4),
+(28, 'https://images.unsplash.com/photo-1581090700400-0f9f1bde4e4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Motherboard', 15000.0, 6),
+(29, 'https://images.unsplash.com/photo-1581090700411-1f9f1bdf5f5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Processor', 22000.0, 3),
+(30, 'https://images.unsplash.com/photo-1581090700422-2f9f1be06f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'RAM 16GB', 7000.0, 10),
+(31, 'https://images.unsplash.com/photo-1581090700433-3f9f1be17f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'RAM 32GB', 12000.0, 5),
+(32, 'https://images.unsplash.com/photo-1581090700444-4f9f1be28f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Cooling Fan', 1500.0, 15),
+(33, 'https://images.unsplash.com/photo-1581090700455-5f9f1be39f9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'CPU Cooler', 3000.0, 7),
+(34, 'https://images.unsplash.com/photo-1581090700466-6f9f1be4afaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60', 'Graphics Card Cooler', 3500.0, 6);
+2026-04-15 15:22:15.988 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_OrderItem_OrdersId` ON `OrderItem` (`OrdersId`);
+2026-04-15 15:22:16.012 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_OrderItem_ProductId` ON `OrderItem` (`ProductId`);
+2026-04-15 15:22:16.045 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Orders_UserId` ON `Orders` (`UserId`);
+2026-04-15 15:22:16.052 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260406050837_InitialCreate', '8.0.0');
+2026-04-15 15:22:16.057 +05:30 [INF] Applying migration '20260408013432_FixData'.
+2026-04-15 15:22:16.179 +05:30 [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` MODIFY COLUMN `ImageUrl` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:22:16.187 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://www.dell.com/en-us/shop/dell-laptops/scr/laptops'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.195 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/81zLDfXdsfL.jpg'
+WHERE `Id` = 7;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.202 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04'
+WHERE `Id` = 8;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.209 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg'
+WHERE `Id` = 9;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.215 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg'
+WHERE `Id` = 10;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.222 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 11;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.228 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260408013432_FixData', '8.0.0');
+2026-04-15 15:22:16.233 +05:30 [INF] Applying migration '20260409044639_fixchanges'.
+2026-04-15 15:22:16.245 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Uname` = ''
+WHERE `Uname` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.292 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Uname` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:22:16.344 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Phone` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:22:16.350 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Password` = ''
+WHERE `Password` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.394 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Password` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:22:16.400 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Email` = ''
+WHERE `Email` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.441 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Email` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:22:16.491 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` ADD `Role` int NOT NULL DEFAULT 0;
+2026-04-15 15:22:16.554 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` ADD `UnitPrice` decimal(65,30) NOT NULL DEFAULT 0.0;
+2026-04-15 15:22:16.563 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.570 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 13;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.578 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 14;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.586 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 15;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.594 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 16;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.601 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 17;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.609 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 18;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.615 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 19;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.623 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 20;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.629 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 21;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.636 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 22;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.644 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 23;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.651 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 24;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.658 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 25;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.665 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 26;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.672 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 27;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.679 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 28;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.686 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 29;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.693 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 30;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.700 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 31;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.707 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 32;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.714 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 33;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.721 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 34;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.728 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260409044639_fixchanges', '8.0.0');
+2026-04-15 15:22:16.733 +05:30 [INF] Applying migration '20260411175218_newupdates'.
+2026-04-15 15:22:16.746 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 12;
+SELECT ROW_COUNT();
+2026-04-15 15:22:16.751 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260411175218_newupdates', '8.0.0');
+2026-04-15 15:22:16.758 +05:30 [INF] Applying migration '20260415095146_InitDB'.
+2026-04-15 15:22:16.776 +05:30 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP INDEX `IX_OrderItem_ProductId`;
+2026-04-15 15:22:35.998 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:22:36.046 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:22:36.067 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:22:36.081 +05:30 [INF] Applying migration '20260415095146_InitDB'.
+2026-04-15 15:22:36.133 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP INDEX `IX_OrderItem_ProductId`;
+2026-04-15 15:39:49.936 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:39:49.975 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:39:49.992 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:42:03.725 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:42:03.770 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:42:03.786 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:42:03.801 +05:30 [INF] Reverting migration '20260411175218_newupdates'.
+2026-04-15 15:42:03.836 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700223-1a9e1ff1d5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 12;
+SELECT ROW_COUNT();
+2026-04-15 15:42:03.838 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `__EFMigrationsHistory`
+WHERE `MigrationId` = '20260411175218_newupdates';
+2026-04-15 15:42:03.845 +05:30 [INF] Reverting migration '20260409044639_fixchanges'.
+2026-04-15 15:42:03.903 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` DROP COLUMN `Role`;
+2026-04-15 15:42:03.952 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP COLUMN `UnitPrice`;
+2026-04-15 15:42:03.991 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Uname` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:42:04.043 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Phone` int NOT NULL;
+2026-04-15 15:42:04.084 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Password` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:42:04.126 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Email` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:42:04.130 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://www.dell.com/en-us/shop/dell-laptops/scr/laptops'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.134 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700232-2e6fbbd0b8f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 13;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.140 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700245-2b6f1dbd0c2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 14;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.143 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700256-3a8f1bc2f1f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 15;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.146 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700268-4b9f1bd2f2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 16;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.150 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700279-5c9f1bd3f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 17;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.154 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700290-6d9f1bd4f4f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 18;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.159 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700301-7e9f1bd5f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 19;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.163 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700312-8f9f1bd6f6f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 20;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.167 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700323-9f9f1bd7f7f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 21;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.171 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700334-af9f1bd8f8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 22;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.174 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700345-bf9f1bd9f9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 23;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.261 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700356-cf9f1bda0a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 24;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.264 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700367-df9f1bdb1b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 25;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.267 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700378-ef9f1bdc2c2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 26;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.270 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700389-ff9f1bdd3d3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 27;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.273 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700400-0f9f1bde4e4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 28;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.276 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700411-1f9f1bdf5f5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 29;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.278 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700422-2f9f1be06f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 30;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.281 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700433-3f9f1be17f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 31;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.283 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700444-4f9f1be28f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 32;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.285 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700455-5f9f1be39f9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 33;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.287 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581090700466-6f9f1be4afaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 34;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.290 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `__EFMigrationsHistory`
+WHERE `MigrationId` = '20260409044639_fixchanges';
+2026-04-15 15:42:04.291 +05:30 [INF] Reverting migration '20260408013432_FixData'.
+2026-04-15 15:42:04.303 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = ''
+WHERE `ImageUrl` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:42:04.366 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` MODIFY COLUMN `ImageUrl` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:42:04.370 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.101 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 7;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.105 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1581092917152-832f081b5b18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 8;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.108 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1587825140708-7f9a4b3bfa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 9;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.111 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1612831660898-d1b1bdfeb25f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 10;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.114 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1612831455545-8b497a1b6ec3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
+WHERE `Id` = 11;
+SELECT ROW_COUNT();
+2026-04-15 15:42:06.116 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `__EFMigrationsHistory`
+WHERE `MigrationId` = '20260408013432_FixData';
+2026-04-15 15:52:55.665 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:52:55.704 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:52:55.721 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:52:55.736 +05:30 [INF] Applying migration '20260408013432_FixData'.
+2026-04-15 15:52:55.841 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` MODIFY COLUMN `ImageUrl` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-15 15:52:55.846 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://www.dell.com/en-us/shop/dell-laptops/scr/laptops'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.849 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/81zLDfXdsfL.jpg'
+WHERE `Id` = 7;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.852 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04'
+WHERE `Id` = 8;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.856 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg'
+WHERE `Id` = 9;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.860 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg'
+WHERE `Id` = 10;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.863 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 11;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.866 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260408013432_FixData', '8.0.0');
+2026-04-15 15:52:55.869 +05:30 [INF] Applying migration '20260409044639_fixchanges'.
+2026-04-15 15:52:55.882 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Uname` = ''
+WHERE `Uname` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:52:55.932 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Uname` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:52:56.102 +05:30 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Phone` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:52:56.104 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Password` = ''
+WHERE `Password` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.149 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Password` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:52:56.150 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Users` SET `Email` = ''
+WHERE `Email` IS NULL;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.196 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Email` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 15:52:56.235 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` ADD `Role` int NOT NULL DEFAULT 0;
+2026-04-15 15:52:56.288 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` ADD `UnitPrice` decimal(65,30) NOT NULL DEFAULT 0.0;
+2026-04-15 15:52:56.292 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.295 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 13;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.298 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 14;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.301 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 15;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.306 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 16;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.309 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 17;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.312 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 18;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.314 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 19;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.317 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 20;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.320 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 21;
+SELECT ROW_COUNT();
+2026-04-15 15:52:56.323 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 22;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.135 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 23;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.138 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 24;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.142 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 25;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.146 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 26;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.148 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 27;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.151 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 28;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.153 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 29;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.155 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 30;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.158 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 31;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.160 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 32;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.163 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 33;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.167 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg'
+WHERE `Id` = 34;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.170 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260409044639_fixchanges', '8.0.0');
+2026-04-15 15:52:57.170 +05:30 [INF] Applying migration '20260411175218_newupdates'.
+2026-04-15 15:52:57.181 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `ImageUrl` = 'https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg'
+WHERE `Id` = 12;
+SELECT ROW_COUNT();
+2026-04-15 15:52:57.181 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260411175218_newupdates', '8.0.0');
+2026-04-15 15:57:10.327 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:57:10.366 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 15:57:10.382 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 15:57:10.392 +05:30 [INF] Applying migration '20260415095146_InitDB'.
+2026-04-15 15:57:10.441 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP INDEX `IX_OrderItem_ProductId`;
+2026-04-15 16:02:34.917 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:02:34.958 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:02:34.976 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 16:02:34.986 +05:30 [INF] Applying migration '20260415103210_changeOrderItems'.
+2026-04-15 16:02:35.012 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260415103210_changeOrderItems', '8.0.0');
+2026-04-15 16:04:16.023 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:04:16.062 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:04:16.078 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 16:04:16.092 +05:30 [INF] Reverting migration '20260415103210_changeOrderItems'.
+2026-04-15 16:04:16.114 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `__EFMigrationsHistory`
+WHERE `MigrationId` = '20260415103210_changeOrderItems';
+2026-04-15 16:23:52.162 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:23:52.200 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-15 16:23:52.217 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-15 16:23:52.226 +05:30 [INF] Applying migration '20260415105242_changeOrderItem'.
+2026-04-15 16:23:52.326 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` DROP COLUMN `UnitPrice`;
+2026-04-15 16:23:52.347 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` RENAME COLUMN `Order_date` TO `TransactionId`;
+2026-04-15 16:23:52.411 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` MODIFY COLUMN `CustomerName` varchar(255) CHARACTER SET utf8mb4 NULL;
+2026-04-15 16:23:52.462 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` ADD `PaymentStatus` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 16:23:52.514 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` ADD `Status` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-15 16:23:52.538 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Carts` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `UserId` longtext CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_Carts` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-04-15 16:23:52.575 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `CartItems` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Name` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Price` decimal(65,30) NOT NULL,
+    `ProductId` int NOT NULL,
+    `CartId` int NOT NULL,
+    CONSTRAINT `PK_CartItems` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_CartItems_Carts_CartId` FOREIGN KEY (`CartId`) REFERENCES `Carts` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_CartItems_product_ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-15 16:23:52.621 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_product_Price_Stock` ON `product` (`Price`, `Stock`);
+2026-04-15 16:23:52.644 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Orders_CustomerName_OrderDate` ON `Orders` (`CustomerName`, `OrderDate`);
+2026-04-15 16:23:52.662 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_OrderItem_ProductId_OrderId` ON `OrderItem` (`ProductId`, `OrderId`);
+2026-04-15 16:23:52.679 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_CartItems_CartId` ON `CartItems` (`CartId`);
+2026-04-15 16:23:52.693 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_CartItems_ProductId` ON `CartItems` (`ProductId`);
+2026-04-15 16:23:52.695 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260415105242_changeOrderItem', '8.0.0');

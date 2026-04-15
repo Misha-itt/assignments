@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { useLoginUserMutation, useGetProfileQuery } from '../api';
+import { useLoginUserMutation, useGetProfileQuery } from '../../api';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setCredentials } from '../AuthSlice';
+import { setCredentials } from '../../AuthSlice';
 import { ROLES, LOGIN_TEXT } from './Constant'
 import './Login.css';  
 

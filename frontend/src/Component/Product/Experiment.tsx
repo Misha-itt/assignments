@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import ProductCard, { Product } from "./ProductCard";
 import { useGetProductsQuery } from "./ProductService";
 import { useNavigate } from "react-router-dom";
 import { NAVBAR, SIDEBAR, CONTENT, PAGINATION, PAGE } from "./ProductConstant";
 import "./ProductList.css";
 
+
+
+function SkeletonCard() {
+  return (
+    <div className="skeleton-card">
+      <div className="skeleton-img" />
+      <div className="skeleton-line" />
+      <div className="skeleton-line short" />
+    </div>
+  );
+}
+
+
 function ProductList() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
+  const [sort, setSort] = useState("default");
+  const [wishlist, setWishlist] = useState<number[]>([]);
+  const [quickView, setQuickView] = useState(null);
+
   const [filters, setFilters] = useState({
     search: "",
     minPrice: "",
@@ -33,6 +50,21 @@ function ProductList() {
 
 
   const { data: products = [], error, isLoading } = useGetProductsQuery(query);
+
+  const sortedProducts = useMemo(() => {
+    let data = [...products];
+
+    if (sort === "low") data.sort((a, b) => a.price - b.price);
+    if (sort === "high") data.sort((a, b) => b.price - a.price);
+
+    return data;
+  }, [products, sort]);
+
+  const toggleWishlist = (id:number) => {
+    setWishlist((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    );
+  };
 
   const handleFilterChange = (key: string, value: any) =>
     setFilters((prev) => ({ ...prev, [key]: value }));

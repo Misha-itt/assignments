@@ -12,10 +12,10 @@ export const NAVBAR = {
 export const SIDEBAR = {
   title: "Filters",
   priceFields: [
-    { key: "minPrice", placeholder: "Min Price" },
-    { key: "maxPrice", placeholder: "Max Price" },
+    { key: "minPrice" as const, placeholder: "Min Price" },
+    { key: "maxPrice" as const, placeholder: "Max Price" },
   ],
-  availabilityField: { key: "inStockOnly", label: "In Stock Only" },
+  availabilityField: { key: "inStockOnly" as const, label: "In Stock Only" },
   applyButton: "Apply Filters",
 };
 

@@ -16,7 +16,7 @@ public class OrderController : ControllerBase
     }
 
  
-    [HttpGet("filter")]
+    [HttpGet]
     [EnableRateLimiting("fixed")]
     public IActionResult GetOrders([FromQuery] OrderQueryParams query)
     {
@@ -29,8 +29,8 @@ public class OrderController : ControllerBase
     [HttpPost]
     public IActionResult Create([FromBody] OrdersDTO dto)
     {
-        var created = _service.Create(dto); 
-        return Ok(created);
+        var createdOrder = _service.CreateAsync(dto); 
+        return Ok(createdOrder);
     }
 
    

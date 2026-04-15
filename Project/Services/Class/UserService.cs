@@ -16,7 +16,7 @@ namespace Project.Services.Class
         private readonly ILogger<UserService> _logger;
 
         public UserService(IUserRepository userRepository, JwtService jwtService,IMapper mapper, ILogger<UserService> logger)
-        {
+        { 
             _userRepository = userRepository;
             _jwtService = jwtService;
             _passwordHasher = new PasswordHasher<User>();

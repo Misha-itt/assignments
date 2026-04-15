@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useRegisterUserMutation } from '../api';
+import { useRegisterUserMutation } from '../../api';
 import { useNavigate } from 'react-router-dom';
 import { ROLES, REGISTER_TEXT } from './Constant';
 import './Register.css';  

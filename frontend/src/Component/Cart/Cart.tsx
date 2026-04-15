@@ -2,8 +2,8 @@
 import "./Cart.css";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, placeOrder } from "./order/OrderSlice";
-import { RootState } from "./store";
+import { removeFromCart, placeOrder } from "../Order/OrderSlice";
+import { RootState } from "../../store";
 
 
 export interface CartItem {

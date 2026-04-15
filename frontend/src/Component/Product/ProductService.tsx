@@ -1,7 +1,7 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Product } from './ProductCard';
-import { API_BASE_URL } from '../config'; 
+import { API_BASE_URL } from '../../config'; 
 
 export const ProductService = createApi({
   reducerPath: 'ProductService',

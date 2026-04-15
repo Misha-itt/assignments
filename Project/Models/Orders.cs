@@ -15,13 +15,17 @@ namespace Project.Models
         public string? Email { get; set; }
 
         public string? Address { get; set; }
-        public string? Order_date { get; set; }
+        
 
         public int ProductId { get; set; }
 
         public int Quantity { get; set; }
 
+        public string Status { get; set; } = "Pending";
+
         public string? PaymentMethod { get; set; }
+        public string PaymentStatus { get; set; } = "Pending";
+        public string? TransactionId { get; set; }
 
         public decimal TotalPrice { get; set; }
 

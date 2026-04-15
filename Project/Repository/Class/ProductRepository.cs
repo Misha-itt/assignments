@@ -33,7 +33,8 @@ namespace Project.Repository.Class
                     Id = product.Id,
                     Pname = product.Pname,
                     Price = product.Price,
-                    Stock = product.Stock
+                    Stock = product.Stock,
+                    ImageUrl = product.ImageUrl
                 })
                 .Skip((query.PageNumber - 1) * query.PageSize)
                 .Take(query.PageSize)

@@ -1,6 +1,6 @@
 import "./ProductCard.css";
 import { useDispatch } from "react-redux";
-import { addToCart, placeOrder } from "../order/OrderSlice";
+import { addToCart, placeOrder } from "../Order/OrderSlice";
 
 export type Product = {
   id: number;

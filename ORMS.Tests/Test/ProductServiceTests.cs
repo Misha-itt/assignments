@@ -51,7 +51,7 @@ namespace ORMS.Tests.Test
             var result = _service.Get(query);
 
             Assert.NotNull(result);
-            Assert.Equal("laptop", result[0].Pname);
+            Assert.Equal("Laptop", result[0].Pname);
 
         }
 
