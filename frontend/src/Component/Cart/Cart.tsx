@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, placeOrder } from "../Order/OrderSlice";
 import { RootState } from "../../store";
+import { useNavigate } from "react-router-dom";
 
 
 export interface CartItem {
@@ -16,6 +17,7 @@ export default function Cart() {
   const cart = useSelector((state: RootState) => state.order.cart);
   const dispatch = useDispatch();
  
+const navigate = useNavigate();
 
   const handleRemove = (index: number) => {
    dispatch(removeFromCart(index));
@@ -23,18 +25,12 @@ export default function Cart() {
   };
 
 
-
-  const handleOrder = (item: CartItem) => {
-  dispatch(placeOrder({
-    id: Date.now(),
-    userName: "",
-    orderDate: new Date().toISOString(),
-    totalAmount: item.price,
-    items: [item]
-  }));
-
-  toast.success(`Order placed for ${item.name}`);
+  const handleOrder = () => {
+  navigate("/checkout");
 };
+  
+
+
 
   return (
     <div className="cart-container">
@@ -44,7 +40,7 @@ export default function Cart() {
         <p className="empty-cart">Your cart is empty</p>
       ) : (
         <div className="cart-list">
-          {cart.map((item:any ,index:number) => (
+          {cart.map((item:CartItem ,index:number) => (
             <div key={index} className="cart-item">
               <div className="cart-info">
                 <h4>{item.name}</h4>
@@ -54,9 +50,9 @@ export default function Cart() {
               <div>
                 <button
                   className="order-btn"
-                  onClick={() => handleOrder(item)}
+                  onClick={() => handleOrder()}
                 >
-                  Order
+                  checkout
                 </button>
 
                 <button

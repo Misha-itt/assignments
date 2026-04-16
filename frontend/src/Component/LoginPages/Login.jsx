@@ -29,10 +29,10 @@ function Login() {
       const res = await loginUser(form).unwrap();
       dispatch(setCredentials(res));
 
-      alert(LOGIN_TEXT.SUCCESS_MESSAGE);
+      toast.success(LOGIN_TEXT.SUCCESS_MESSAGE);
       navigate('/'); 
     } catch (err) {
-      alert(err.response?.data || LOGIN_TEXT.INVALID_CREDENTIALS);
+      toast.err(err.response?.data || LOGIN_TEXT.INVALID_CREDENTIALS);
     } finally {
       setLoading(false);
     }

@@ -6,7 +6,6 @@ namespace Project.Services.Interface
 {
     public interface IOrderService
     {
-       //OrderResponseDTO? GetById(int id);
 
         Task<OrderResponseDTO> CreateAsync(OrdersDTO dto);
 
@@ -15,6 +14,7 @@ namespace Project.Services.Interface
 
         List<OrderResponseDTO> GetOrders(OrderQueryParams query);
         List<OrderSummaryDTO> GetOrderSummary();
-       
+
+        Task ProcessPaymentJob(int orderId);
     }
 }

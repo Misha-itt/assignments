@@ -1,7 +1,9 @@
 import "./ProductCard.css";
 import { useDispatch } from "react-redux";
 import { addToCart, placeOrder } from "../Order/OrderSlice";
+import { useNavigate } from "react-router-dom";
 
+import { toast} from "react-toastify";
 export type Product = {
   id: number;
   pname: string;
@@ -10,8 +12,10 @@ export type Product = {
   imageUrl?: string;
 };
 
+
 function ProductCard({ product }: { product: Product }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     dispatch(addToCart({
@@ -20,20 +24,15 @@ function ProductCard({ product }: { product: Product }) {
       price: product.price
     }));
 
-    alert("Product added to cart!");
+    toast.success("Product added to cart!");
   };
 
   const handleOrderNow = () => {
-    dispatch(placeOrder({
-      id: Date.now(),
-      userName: "",
-      orderDate: new Date().toISOString(),
-      totalAmount: product.price,
-      items: [{
-        id: product.id,
-        name: product.pname,
-        price: product.price
-      }]
+    dispatch(addToCart({
+      id: product.id,
+      name : product.pname,
+      price: product.price
+      
     }));
 
     alert(`Order placed for ${product.pname}`);

@@ -3,6 +3,7 @@ import { useRegisterUserMutation } from '../../api';
 import { useNavigate } from 'react-router-dom';
 import { ROLES, REGISTER_TEXT } from './Constant';
 import './Register.css';  
+import { toast } from 'react-toastify';
 
 function Register() {
   const navigate = useNavigate();
@@ -23,12 +24,12 @@ function Register() {
     e.preventDefault();
     setLoading(true);
     if (!/^\d{10}$/.test(form.phone)) {
-    alert("Enter valid 10-digit phone number");
+    toast("Enter valid 10-digit phone number");
     return;
   }
     try {
         await registerUser(form).unwrap();
-      alert( REGISTER_TEXT.SUCCESS_MESSAGE);
+      toast.success( REGISTER_TEXT.SUCCESS_MESSAGE);
 
       setForm({
         uname: '',
@@ -49,9 +50,9 @@ function Register() {
       .map(([field, msgs]) => `${field}: ${msgs.join(", ")}`)
       .join("\n");
 
-    alert(messages);
+    toast.success(messages);
   } else {
-    alert(err?.data?.message || "Registration failed");
+    toast.err(err?.data?.message || "Registration failed");
   }
 } finally {
       setLoading(false);

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Project.Models;
 using Project.Repository.Interface;
 using Project.Services.Interface;
+using Hangfire;
 
 namespace Project.Services.Class
 {
@@ -52,19 +53,14 @@ namespace Project.Services.Class
 
                 order.TotalPrice = order.OrderItems?.Sum(i => i.Price * i.Quantity) ?? 0;
 
-                await transaction.CommitAsync();
+              
 
                 var createdOrder = _repo.Create(order);
-                var paymentSuccess = await _paymentService.ProcessPaymentAsync(createdOrder);
 
-                var isPaymentSuccess = await _paymentService.ProcessPaymentAsync(createdOrder);
+                await transaction.CommitAsync();
                 _repo.Update(createdOrder.Id, createdOrder);
 
-                if (!isPaymentSuccess)
-                {
-                    _logger.LogWarning("Payment failed for OrderId: {Id}", createdOrder.Id);
-                    return null;
-                }
+                BackgroundJob.Enqueue(() => ProcessPaymentJob(createdOrder.Id));
                 return _mapper.Map<OrderResponseDTO>(createdOrder);
 
             }
@@ -75,8 +71,31 @@ namespace Project.Services.Class
             }
         }
 
-      
-        public OrderResponseDTO? Update(int id, OrdersDTO dto)
+     
+
+public async Task ProcessPaymentJob(int orderId)
+    {
+        var order = _context.Orders.FirstOrDefault(o => o.Id == orderId);
+
+        if (order == null) return;
+
+        var success = await _paymentService.ProcessPaymentAsync(order);
+
+        _repo.Update(order.Id, order);
+
+        if (!success)
+        {
+            _logger.LogWarning("Payment failed, retrying OrderId: {Id}", order.Id);
+
+        
+            BackgroundJob.Schedule(
+                () => ProcessPaymentJob(orderId),
+                TimeSpan.FromMinutes(2)
+            );
+        }
+    }
+
+    public OrderResponseDTO? Update(int id, OrdersDTO dto)
         {
             var order = _mapper.Map<Orders>(dto);
             var updated = _repo.Update(id, order);

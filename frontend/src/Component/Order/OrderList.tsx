@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import OrderCard, { Order } from "./OrderCard";
 import { useGetOrdersQuery } from "./OrderApi"; 
 import "./OrderList.css";
+import { TYPE, PAGE } from "./OrderConstant";
+
 
 function OrderList() {
-  
-
   const [page, setPage] = useState(1);
-  const pageSize = 5;
-
+  const pageSize = PAGE.pagesize;
 
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [userName, setUserName] = useState("");
-
-
-
-      const query = new URLSearchParams({
+  const query = useMemo(()=>{
+      return  new URLSearchParams({
         pageNumber: page.toString(),
         pageSize: pageSize.toString(),
         ...(startDate && { startDate }),
         ...(endDate && { endDate }),
         ...(userName && { userName }),
       }).toString();
+    } , [page, pageSize, startDate, endDate, userName]);
 
       
    const {
@@ -31,7 +29,6 @@ function OrderList() {
     error
   } = useGetOrdersQuery(query);
 
-    
 
   const handleApplyFilters = () => {
     setPage(1);
@@ -48,7 +45,7 @@ function OrderList() {
         <label>
           Start Date:
           <input
-            type="date"
+            type={TYPE.datetype}
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
           />
@@ -57,7 +54,7 @@ function OrderList() {
         <label>
           End Date:
           <input
-            type="date"
+            type={TYPE.datetype}
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
           />
@@ -66,7 +63,7 @@ function OrderList() {
         <label>
           User Name:
           <input
-            type="text"
+            type={TYPE.type}
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             placeholder="Enter user"

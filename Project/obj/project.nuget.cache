@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "O1Tt3ikLwt0=",
+  "dgSpecHash": "7lrDY0GepjA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+  "projectFilePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\dapper\\1.50.5\\dapper.1.50.5.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire\\1.8.23\\hangfire.1.8.23.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire.aspnetcore\\1.8.23\\hangfire.aspnetcore.1.8.23.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire.core\\1.8.23\\hangfire.core.1.8.23.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire.mysqlstorage\\2.0.3\\hangfire.mysqlstorage.2.0.3.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire.netcore\\1.8.23\\hangfire.netcore.1.8.23.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\hangfire.sqlserver\\1.8.23\\hangfire.sqlserver.1.8.23.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.5\\microsoft.aspnetcore.authentication.jwtbearer.10.0.5.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.3.9\\microsoft.aspnetcore.identity.2.3.9.nupkg.sha512",
@@ -42,7 +49,12 @@
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.0\\pomelo.entityframeworkcore.mysql.8.0.0.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\serilog.aspnetcore\\10.0.0\\serilog.aspnetcore.10.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\serilog.extensions.hosting\\10.0.0\\serilog.extensions.hosting.10.0.0.nupkg.sha512",
@@ -64,9 +76,11 @@
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.data.sqlclient\\4.4.0\\system.data.sqlclient.4.4.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.1\\system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.reflection.typeextensions\\4.4.0\\system.reflection.typeextensions.4.4.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.runtime.caching\\6.0.0\\system.runtime.caching.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "C:\\Users\\misha.agrawal\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
@@ -77,9 +91,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.Identity will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Microsoft.AspNetCore.Identity",
       "targetGraphs": [
         "net10.0"
@@ -89,9 +103,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net10.0"
@@ -101,9 +115,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -113,9 +127,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -125,9 +139,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -137,10 +151,46 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
-      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\Project\\Project.csproj",
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
       "libraryId": "Microsoft.Data.SqlClient",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Newtonsoft.Json' 11.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'System.Data.SqlClient' 4.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8g2p-5pqh-5jmc",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.Data.SqlClient' 4.4.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "projectPath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\misha.agrawal\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\ORMS\\project\\Project.csproj",
+      "libraryId": "System.Data.SqlClient",
       "targetGraphs": [
         "net10.0"
       ]

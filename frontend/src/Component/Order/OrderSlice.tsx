@@ -31,7 +31,7 @@ const orderSlice = createSlice({
 
     removeFromCart: (state, action :  PayloadAction<number>)  => {
       state.cart = state.cart.filter(
-        (_, index) => index !== action.payload
+        item => item.id !== action.payload
       );
     },
 
