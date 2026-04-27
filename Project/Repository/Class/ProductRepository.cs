@@ -1,4 +1,6 @@
 ﻿using Project.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Project.Repository.Class
 {
@@ -13,7 +15,11 @@ namespace Project.Repository.Class
 
         public List<Product> Get(ProductQueryParams query)
         {
-            var products = context.Products.AsQueryable();
+            var products = context.Products
+                .AsNoTracking()
+                .Where(p => p.IsActive)  
+                .AsQueryable();
+                
 
             if (!string.IsNullOrEmpty(query.Name))
                 products = products.Where(product => product.Pname.Contains(query.Name));
@@ -23,6 +29,9 @@ namespace Project.Repository.Class
 
             if (query.MaxPrice.HasValue)
                 products = products.Where(product => product.Price <= query.MaxPrice.Value);
+
+            if (query.InStock.HasValue && query.InStock.Value)
+                products = products.Where(p => p.Stock > 0);
 
             if (query.InStock.HasValue && query.InStock.Value)
                 products = products.Where(product => product.Stock > 0);
@@ -65,6 +74,8 @@ namespace Project.Repository.Class
                 })
                 .ToList();
         }
+
+        public async Task<Product?> GetByIdAsync(int id) => await context.Products.FindAsync(id);
 
         public Product? Update(int id, Product product)
         {

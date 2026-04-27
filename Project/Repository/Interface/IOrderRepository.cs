@@ -4,12 +4,13 @@ namespace Project.Repository.Interface
 {
     public interface IOrderRepository
     {
-        //List<Orders> GetOrders();
+        List<Orders> GetOrders(OrderQueryParams query);
+        Task<Orders?> GetByIdAsync(int id);
         Orders Create(Orders order);
         Orders? Update(int id, Orders order);
         bool Delete(int id);
 
-        List<Orders> GetOrders(OrderQueryParams query);
+       
 
         List<OrderSummaryDTO> GetOrderSummary();
       

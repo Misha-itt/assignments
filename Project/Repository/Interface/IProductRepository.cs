@@ -5,6 +5,7 @@ namespace Project.Repository.Interface
     public interface IProductRepository
     {
         List<Product> Get(ProductQueryParams query);
+        Task<Product?> GetByIdAsync(int id);
         Product Create(Product p);
         Product?Update(int id, Product p);
         bool Delete(int id);

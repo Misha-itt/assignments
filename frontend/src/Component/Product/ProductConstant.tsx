@@ -7,6 +7,7 @@ export const NAVBAR = {
     { label: "Go to Cart", action: "cart" },
   ],
   loginButton: "Login",
+  orderbutton : "Order"
 };
 
 export const SIDEBAR = {
@@ -23,6 +24,8 @@ export const CONTENT = {
   title: "Products",
   emptyMessage: "No products found",
   loadingMessage: "Loading...",
+
+  failed : "Failed to load products"
 };
 
 export const PAGINATION = {
@@ -35,3 +38,9 @@ export const PAGE ={
   Pagesize : 20,
 
 };
+
+export const PRICE ={
+  low : "Low - High",
+  high : "High - Low",
+  sort :  "sort"
+}

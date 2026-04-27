@@ -1,0 +1,46 @@
+2026-04-27 14:46:38.366 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 14:46:38.616 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-27 14:46:38.620 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-27 14:46:38.623 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 14:46:38.625 +05:30 [INF] Hosting environment: Development
+2026-04-27 14:46:38.627 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-27 14:46:43.707 +05:30 [INF] Application is shutting down...
+2026-04-27 14:47:52.723 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 14:47:52.997 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-27 14:47:53.003 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-27 14:47:53.008 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 14:47:53.012 +05:30 [INF] Hosting environment: Development
+2026-04-27 14:47:53.015 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-27 14:48:08.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-27 14:48:09.294 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 377.7885ms
+2026-04-27 14:48:09.312 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-27 14:48:09.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/ - null null
+2026-04-27 14:48:09.528 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/ - 404 0 null 17.5212ms
+2026-04-27 14:48:09.545 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:62301/, Response status code: 404
+2026-04-27 14:48:14.240 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.html - null null
+2026-04-27 14:48:14.344 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.html - 304 null null 104.1181ms
+2026-04-27 14:48:14.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - null null
+2026-04-27 14:48:14.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - null null
+2026-04-27 14:48:14.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.css - null null
+2026-04-27 14:48:14.401 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui.css - 304 null null 44.8052ms
+2026-04-27 14:48:14.401 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.css - 304 null null 44.6275ms
+2026-04-27 14:48:14.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-bundle.js - 304 null null 45.181ms
+2026-04-27 14:48:14.436 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-27 14:48:14.436 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/index.js - null null
+2026-04-27 14:48:14.458 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/swagger-ui-standalone-preset.js - 304 null null 21.9234ms
+2026-04-27 14:48:14.469 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/index.js - 304 null null 32.3575ms
+2026-04-27 14:48:14.561 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - null null
+2026-04-27 14:48:14.878 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 316.4903ms
+2026-04-27 14:48:16.494 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - null null
+2026-04-27 14:48:16.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/swagger/favicon-32x32.png - 200 628 image/png 13.8437ms
+2026-04-27 14:48:25.922 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Address - null null
+2026-04-27 14:48:25.945 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-27 14:48:25.957 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-04-27 14:48:25.961 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Address - 401 0 null 38.9069ms
+2026-04-27 15:29:01.931 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 15:29:02.110 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-27 15:29:02.114 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-27 15:29:02.118 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 15:29:02.120 +05:30 [INF] Hosting environment: Development
+2026-04-27 15:29:02.122 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project

@@ -8,7 +8,7 @@ namespace Project.Services.Class
         public async Task<bool> ProcessPaymentAsync(Orders order)
         {
             await Task.Delay(1000);
-            bool isSuccess = new Random().Next(0, 2) == 1;
+            bool isSuccess = Random.Shared.Next(0, 2) == 1;
             order.TransactionId = Guid.NewGuid().ToString();
             if (isSuccess)
             {

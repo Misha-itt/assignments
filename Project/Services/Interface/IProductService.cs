@@ -5,8 +5,9 @@ namespace Project.Services.Interface
     public interface IProductService
     {
         List<ProductResponseDTO> Get(ProductQueryParams query);
-        Product Create(ProductDTO dto);
-        Product? Update(int id, ProductDTO dto);
+        Task<ProductResponseDTO?> GetByIdAsync(int id);
+        ProductResponseDTO Create(ProductDTO dto);
+        ProductResponseDTO? Update(int id, ProductDTO dto);
         bool Delete(int id);
         List<ProductSalesDTO> GetProductSalesSummary();
     }

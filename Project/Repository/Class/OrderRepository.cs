@@ -16,6 +16,7 @@ public class OrderRepository : IOrderRepository
         var orders = _context.Orders
             .AsNoTracking()
             .Include(order => order.OrderItems)
+            .ThenInclude(oi => oi.Product)
             .AsQueryable();
 
         if (!string.IsNullOrEmpty(query.CustomerName))
@@ -27,6 +28,10 @@ public class OrderRepository : IOrderRepository
         if (query.ToDate.HasValue)
             orders = orders.Where(order => order.OrderDate <= query.ToDate.Value);
 
+        if (!string.IsNullOrEmpty(query.Status))
+            orders = orders.Where(o => o.Status == query.Status);
+
+
         int pageNumber = query.PageNumber <= 0 ? 1 : query.PageNumber;
         int pageSize = query.PageSize <= 0 ? 10 : query.PageSize;
 
@@ -37,6 +42,8 @@ public class OrderRepository : IOrderRepository
           
             .ToList();
     }
+
+    public async Task<Orders?> GetByIdAsync(int id) => await _context.Orders.FindAsync(id);
 
     public Orders Create(Orders order)
     {
@@ -83,9 +90,12 @@ public class OrderRepository : IOrderRepository
     {
         var order = _context.Orders.Find(id);
         if (order == null) return false;
-
+        if (order.PaymentStatus == "Pending")
+            throw new InvalidOperationException("Cannot delete an order while payment is still pending.");
         _context.Orders.Remove(order);
         _context.SaveChanges();
         return true;
     }
+
+    
 }

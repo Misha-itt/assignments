@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.Services.Interface;
 using Microsoft.AspNetCore.RateLimiting;
@@ -27,8 +28,10 @@ public class OrderController : ControllerBase
   
    
     [HttpPost]
-    public IActionResult Create([FromBody] OrdersDTO dto)
+    [Authorize]
+    public   IActionResult Create([FromBody] OrdersDTO dto)
     {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
         var createdOrder = _service.CreateAsync(dto); 
         return Ok(createdOrder);
     }

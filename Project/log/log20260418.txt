@@ -1,0 +1,14 @@
+2026-04-18 10:06:56.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20&name=laptop - null null
+2026-04-18 10:06:56.945 +05:30 [INF] CORS policy execution successful.
+2026-04-18 10:06:56.947 +05:30 [INF] Executing endpoint 'ProductController.Get (Project)'
+2026-04-18 10:06:56.950 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(ProductQueryParams) on controller ProductController (Project).
+2026-04-18 10:06:56.995 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__query_Name_0_rewritten='?' (Size = 4000), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Pname`, `p`.`Price`, `p`.`Stock`, `p`.`ImageUrl`
+FROM `product` AS `p`
+WHERE `p`.`Pname` LIKE @__query_Name_0_rewritten
+LIMIT @__p_2 OFFSET @__p_1
+2026-04-18 10:06:57.001 +05:30 [INF] Fetching the product
+2026-04-18 10:06:57.003 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductResponseDTO, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-18 10:06:57.005 +05:30 [INF] Executed action ProductController.Get (Project) in 50.9755ms
+2026-04-18 10:06:57.018 +05:30 [INF] Executed endpoint 'ProductController.Get (Project)'
+2026-04-18 10:06:57.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:62301/api/Product?pageNumber=1&pageSize=20&name=laptop - 200 null application/json; charset=utf-8 95.074ms

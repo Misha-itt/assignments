@@ -1,26 +1,28 @@
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import { useGetProductsQuery } from "../Component/Product/ProductService";
 import { ShoppingCart, Search } from "lucide-react";
-import { useNavigate ,useSearchParams} from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { CONSTANT } from "./LandingConstant";
 
- function LandingPage() {
-    const navigate = useNavigate();
-    const [searchParams] = useSearchParams();
-    const [page, setPage] = useState(1);
-  const { data: products =[], isLoading } = useGetProductsQuery({
-         pageNumber: 1,
-        pageSize: 5,
-    }
-  );
-
-   const [filters, setFilters] = useState({
-      search: searchParams.get("name") || "",
-      minPrice: "",
-      maxPrice: "",
-      inStockOnly: false,
-    });
+function LandingPage() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const [page, setPage] = useState(1);
   
-     const handleFilterChange = (key: string, value: any) =>
+  const { data: products = [], isLoading } = useGetProductsQuery({
+    pageNumber: 1,
+    pageSize: 5,
+    
+  });
+
+  const [filters, setFilters] = useState({
+    search: searchParams.get("name") || "",
+    minPrice: "",
+    maxPrice: "",
+    inStockOnly: false,
+  });
+
+  const handleFilterChange = (key: string, value: any) =>
     setFilters((prev) => ({ ...prev, [key]: value }));
 
   const applyFilters = () => {
@@ -30,9 +32,8 @@ import { useNavigate ,useSearchParams} from "react-router-dom";
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
       <nav className="flex items-center justify-between px-8 py-4 bg-white shadow-md">
-        <h1 className="text-2xl font-bold text-blue-600">ORMS</h1>
+        <h1 className="text-2xl font-bold text-blue-600">{CONSTANT.title}</h1>
 
         <div className="flex items-center bg-gray-100 px-4 py-2 rounded-xl w-1/2">
           <Search size={18} />
@@ -46,40 +47,40 @@ import { useNavigate ,useSearchParams} from "react-router-dom";
               if (e.key === "Enter") applyFilters();
             }}
           />
-
-          
         </div>
 
         <div className="flex gap-6 items-center">
-          <button className="font-medium" onClick={() => navigate("/login")}>Login</button>
-          <button className="font-medium" onClick={() => navigate("/orders")}>Orders</button>
+          <button className="font-medium" onClick={() => navigate("/login")}>
+            Login
+          </button>
+          <button className="font-medium" onClick={() => navigate("/orders")}>
+            Orders
+          </button>
           <ShoppingCart
-  className="cursor-pointer"
-  onClick={() => navigate("/cart")}
-/>
+            className="cursor-pointer"
+            onClick={() => navigate("/cart")}
+          />
         </div>
       </nav>
 
-     
       <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-10 rounded-b-3xl">
-        <h2 className="text-4xl font-bold mb-4">Manage Orders Seamlessly</h2>
-        <p className="text-lg mb-6">
-          Fast, reliable and scalable order management system for your business.
-        </p>
-        <button className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold"
-        onClick={() => navigate("/products")}>
-          Get Started
+        <h2 className="text-4xl font-bold mb-4">{CONSTANT.manageorders}</h2>
+        <p className="text-lg mb-6">{CONSTANT.text}</p>
+        <button
+          className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold"
+          onClick={() => navigate("/products")}
+        >
+          {CONSTANT.button}
         </button>
       </section>
 
-      
       <section className="p-8">
-        <h3 className="text-2xl font-semibold mb-6">Categories</h3>
+        <h3 className="text-2xl font-semibold mb-6">{CONSTANT.categories}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {["Electronics"].map((cat) => (
             <div
               key={cat}
-               onClick={() => navigate(`/products?name=${cat}`)}
+              onClick={() => navigate(`/products?name=${cat}`)}
               className="bg-white p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer text-center"
             >
               <p className="font-medium">{cat}</p>
@@ -88,9 +89,8 @@ import { useNavigate ,useSearchParams} from "react-router-dom";
         </div>
       </section>
 
-      
       <section className="p-8">
-        <h3 className="text-2xl font-semibold mb-6">Top Products</h3>
+        <h3 className="text-2xl font-semibold mb-6">{CONSTANT.topproducts}</h3>
 
         {isLoading ? (
           <p>Loading...</p>
@@ -109,33 +109,29 @@ import { useNavigate ,useSearchParams} from "react-router-dom";
                 <h4 className="font-semibold">{p.pname}</h4>
                 <p className="text-gray-500">₹{p.price}</p>
 
-                <button className="mt-3 w-full bg-blue-600 text-white py-2 rounded-xl">
+                {/* <button className="mt-3 w-full bg-blue-600 text-white py-2 rounded-xl">
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
         )}
       </section>
 
-     
       <section className="p-8">
         <div className="bg-indigo-100 p-8 rounded-3xl flex justify-between items-center">
           <div>
-            <h3 className="text-2xl font-bold">Track Orders Easily</h3>
-            <p className="text-gray-600">
-              Real-time updates and smooth tracking experience.
-            </p>
+            <h3 className="text-2xl font-bold">{CONSTANT.trackorder}</h3>
+            <p className="text-gray-600">{CONSTANT.realtime}</p>
           </div>
           <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl">
-            View Orders
+            {CONSTANT.vieworder}
           </button>
         </div>
       </section>
 
-      
       <footer className="bg-gray-900 text-white p-6 text-center">
-        <p>© 2026 ORMS. All rights reserved.</p>
+        <p>{CONSTANT.footer}</p>
       </footer>
     </div>
   );

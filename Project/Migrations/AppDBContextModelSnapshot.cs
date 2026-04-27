@@ -24,8 +24,17 @@ namespace Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("longtext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Pname")
                         .HasColumnType("longtext");
@@ -46,7 +55,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 1,
+                            Category = "Computers",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Laptop",
                             Price = 50000m,
                             Stock = 5
@@ -54,7 +65,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 2,
+                            Category = "Accessories",
                             ImageUrl = "https://m.media-amazon.com/images/I/71udkMozQ3L._AC_SL1489_.jpg",
+                            IsActive = true,
                             Pname = "Laptop Charger",
                             Price = 1500m,
                             Stock = 15
@@ -62,7 +75,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 3,
+                            Category = "Phones",
                             ImageUrl = "https://th.bing.com/th/id/R.fc73ae7340a79785ed2ac6655051d0d6?rik=SEMYCU828IxtCw",
+                            IsActive = true,
                             Pname = "Mobile",
                             Price = 25000m,
                             Stock = 10
@@ -70,7 +85,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 4,
+                            Category = "Accessories",
                             ImageUrl = "https://th.bing.com/th/id/OIP.L_XVZQ8Vz9zmYHG-27an_QHaGT?w=208&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+                            IsActive = true,
                             Pname = "Mobile Charger",
                             Price = 500m,
                             Stock = 13
@@ -78,7 +95,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 5,
+                            Category = "Peripherals",
                             ImageUrl = "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            IsActive = true,
                             Pname = "Wireless Mouse",
                             Price = 800m,
                             Stock = 20
@@ -86,7 +105,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 6,
+                            Category = "Peripherals",
                             ImageUrl = "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+                            IsActive = true,
                             Pname = "Mechanical Keyboard",
                             Price = 3000m,
                             Stock = 12
@@ -94,7 +115,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 7,
+                            Category = "Peripherals",
                             ImageUrl = "https://m.media-amazon.com/images/I/81zLDfXdsfL.jpg",
+                            IsActive = true,
                             Pname = "Gaming Headset",
                             Price = 2500m,
                             Stock = 7
@@ -102,7 +125,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 8,
+                            Category = "Peripherals",
                             ImageUrl = "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
+                            IsActive = true,
                             Pname = "Webcam",
                             Price = 1200m,
                             Stock = 8
@@ -110,7 +135,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 9,
+                            Category = "Peripherals",
                             ImageUrl = "https://m.media-amazon.com/images/I/715OTcL3kaL._AC_SL1500_.jpg",
+                            IsActive = true,
                             Pname = "USB Hub",
                             Price = 700m,
                             Stock = 25
@@ -118,7 +145,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 10,
+                            Category = "Peripherals",
                             ImageUrl = "https://m.media-amazon.com/images/I/61wDfddKt5L._AC_.jpg",
+                            IsActive = true,
                             Pname = "External Hard Drive",
                             Price = 4500m,
                             Stock = 10
@@ -126,7 +155,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 11,
+                            Category = "Peripherals",
                             ImageUrl = "https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg",
+                            IsActive = true,
                             Pname = "SSD 1TB",
                             Price = 8000m,
                             Stock = 5
@@ -134,7 +165,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 12,
+                            Category = "Peripherals",
                             ImageUrl = "https://s13emagst.akamaized.net/products/50830/50829483/images/res_a126340b9468e6ebe28dfaef136309be.jpg",
+                            IsActive = true,
                             Pname = "Router",
                             Price = 3500m,
                             Stock = 15
@@ -142,7 +175,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 13,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Power Bank",
                             Price = 1200m,
                             Stock = 20
@@ -150,7 +185,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 14,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Smartwatch",
                             Price = 7000m,
                             Stock = 6
@@ -158,7 +195,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 15,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Tablet",
                             Price = 15000m,
                             Stock = 9
@@ -166,7 +205,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 16,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Laptop Stand",
                             Price = 900m,
                             Stock = 14
@@ -174,7 +215,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 17,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "HDMI Cable",
                             Price = 400m,
                             Stock = 30
@@ -182,7 +225,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 18,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Ethernet Cable",
                             Price = 350m,
                             Stock = 40
@@ -190,7 +235,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 19,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Bluetooth Speaker",
                             Price = 1800m,
                             Stock = 10
@@ -198,7 +245,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 20,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Microphone",
                             Price = 2500m,
                             Stock = 7
@@ -206,7 +255,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 21,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Desk Lamp",
                             Price = 1200m,
                             Stock = 12
@@ -214,7 +265,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 22,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Office Chair",
                             Price = 5500m,
                             Stock = 5
@@ -222,7 +275,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 23,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Monitor 24 inch",
                             Price = 12000m,
                             Stock = 8
@@ -230,7 +285,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 24,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Monitor 27 inch",
                             Price = 18000m,
                             Stock = 5
@@ -238,7 +295,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 25,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Laptop Sleeve",
                             Price = 700m,
                             Stock = 20
@@ -246,7 +305,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 26,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "USB Flash Drive",
                             Price = 500m,
                             Stock = 50
@@ -254,7 +315,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 27,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Graphics Card",
                             Price = 40000m,
                             Stock = 4
@@ -262,7 +325,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 28,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Motherboard",
                             Price = 15000m,
                             Stock = 6
@@ -270,7 +335,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 29,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Processor",
                             Price = 22000m,
                             Stock = 3
@@ -278,7 +345,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 30,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "RAM 16GB",
                             Price = 7000m,
                             Stock = 10
@@ -286,7 +355,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 31,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "RAM 32GB",
                             Price = 12000m,
                             Stock = 5
@@ -294,7 +365,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 32,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Cooling Fan",
                             Price = 1500m,
                             Stock = 15
@@ -302,7 +375,9 @@ namespace Project.Migrations
                         new
                         {
                             Id = 33,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "CPU Cooler",
                             Price = 3000m,
                             Stock = 7
@@ -310,11 +385,59 @@ namespace Project.Migrations
                         new
                         {
                             Id = 34,
+                            Category = "Peripherals",
                             ImageUrl = "https://laptopmedia.com/wp-content/uploads/2024/09/Swift-Go-14-AI-02-e1725465393450.jpg",
+                            IsActive = true,
                             Pname = "Graphics Card Cooler",
                             Price = 3500m,
                             Stock = 6
                         });
+                });
+
+            modelBuilder.Entity("Project.Models.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Line1")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Line2")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Pincode")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Project.Models.Cart", b =>
@@ -323,11 +446,13 @@ namespace Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Carts");
                 });
@@ -341,14 +466,10 @@ namespace Project.Migrations
                     b.Property<int>("CartId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(65,30)");
-
                     b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -378,6 +499,10 @@ namespace Project.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -399,6 +524,9 @@ namespace Project.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("AddressId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CustomerName")
                         .HasColumnType("varchar(255)");
 
@@ -415,12 +543,6 @@ namespace Project.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -435,6 +557,8 @@ namespace Project.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("UserId");
 
@@ -451,7 +575,7 @@ namespace Project.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -470,7 +594,71 @@ namespace Project.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Project.Models.Wishlist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Wishlists");
+                });
+
+            modelBuilder.Entity("Project.Models.WishlistItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WishlistId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("WishlistId", "ProductId")
+                        .IsUnique();
+
+                    b.ToTable("WishlistItems");
+                });
+
+            modelBuilder.Entity("Project.Models.Address", b =>
+                {
+                    b.HasOne("Project.Models.User", "User")
+                        .WithMany("Addresses")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project.Models.Cart", b =>
+                {
+                    b.HasOne("Project.Models.User", "User")
+                        .WithOne("Cart")
+                        .HasForeignKey("Project.Models.Cart", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Project.Models.CartItem", b =>
@@ -482,7 +670,7 @@ namespace Project.Migrations
                         .IsRequired();
 
                     b.HasOne("Product", "Product")
-                        .WithMany()
+                        .WithMany("CartItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -511,18 +699,64 @@ namespace Project.Migrations
 
             modelBuilder.Entity("Project.Models.Orders", b =>
                 {
+                    b.HasOne("Project.Models.Address", "OrderAddress")
+                        .WithMany("Orders")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.HasOne("Project.Models.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("OrderAddress");
+
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project.Models.Wishlist", b =>
+                {
+                    b.HasOne("Project.Models.User", "User")
+                        .WithOne("Wishlist")
+                        .HasForeignKey("Project.Models.Wishlist", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project.Models.WishlistItem", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany("WishlistItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Project.Models.Wishlist", "Wishlist")
+                        .WithMany("Items")
+                        .HasForeignKey("WishlistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Wishlist");
                 });
 
             modelBuilder.Entity("Product", b =>
                 {
+                    b.Navigation("CartItems");
+
                     b.Navigation("OrderItems");
+
+                    b.Navigation("WishlistItems");
+                });
+
+            modelBuilder.Entity("Project.Models.Address", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Project.Models.Cart", b =>
@@ -537,7 +771,18 @@ namespace Project.Migrations
 
             modelBuilder.Entity("Project.Models.User", b =>
                 {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("Cart");
+
                     b.Navigation("Orders");
+
+                    b.Navigation("Wishlist");
+                });
+
+            modelBuilder.Entity("Project.Models.Wishlist", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,7 +4,6 @@ import { Product } from './ProductCard';
 import { API_BASE_URL } from '../../config'; 
 
 
-
  export type ProductQueryParams = {
   pageNumber: number;
   pageSize: number;

@@ -19,6 +19,8 @@ namespace Project.Controllers
             _userService = userService;
         }
 
+        private int GetUserId()
+           => int.Parse(User.Claims.First(c => c.Type == "UserId").Value);
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO dto)
@@ -26,7 +28,7 @@ namespace Project.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var user = await _userService.RegisterAsync(dto.Uname, dto.Email, dto.Password, dto.Phone, dto.Role);
+            var user = await _userService.RegisterAsync( dto);
             if (user == null)
                 return BadRequest("User already exists");
 
@@ -49,7 +51,7 @@ namespace Project.Controllers
         }
 
 
-        [Authorize]
+        
         [HttpGet("profile")]
         public IActionResult Profile()
         {

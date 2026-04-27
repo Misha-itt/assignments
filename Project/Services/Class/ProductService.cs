@@ -21,15 +21,22 @@ namespace Project.Services.Class
         public List<ProductResponseDTO> Get(ProductQueryParams query)
         {
             var products = _repo.Get(query);
-            _logger.LogInformation("Fetching the product", query);
+            _logger.LogInformation("Fetching the product : {@query}", query);
             return _mapper.Map<List<ProductResponseDTO>>(products);
 
         }
 
-        public Product Create(ProductDTO dto)
+        public async Task<ProductResponseDTO?> GetByIdAsync(int id)
+        {
+            var product = await _repo.GetByIdAsync(id);
+            return product == null ? null : _mapper.Map<ProductResponseDTO>(product);
+        }
+
+        public ProductResponseDTO Create(ProductDTO dto)
         {
             var product = _mapper.Map<Product>(dto);
-            return _repo.Create(product);
+            var created = _repo.Create(product);
+            return _mapper.Map<ProductResponseDTO>(created);
         }
 
         public List<ProductSalesDTO> GetProductSalesSummary()
@@ -38,10 +45,13 @@ namespace Project.Services.Class
         }
         
 
-        public Product? Update(int id, ProductDTO dto)
+        public ProductResponseDTO? Update(int id, ProductDTO dto)
         {
             var product = _mapper.Map<Product>(dto);
-            return _repo.Update(id, product);
+            var updated = _repo.Update(id, product);
+            if (updated == null) return null;
+
+            return _mapper.Map<ProductResponseDTO>(updated);
         }
 
         public bool Delete(int id)

@@ -8,6 +8,7 @@ public class OrdersDTO
 
     public string? Address { get; set; }
     public string? Order_date { get; set; }
+    public int? AddressId { get; set; }
 
     public int ProductId { get; set; }
 
@@ -16,6 +17,10 @@ public class OrdersDTO
     public string? PaymentMethod { get; set; }
 
     public decimal TotalPrice { get; set; }
+    public int UserId { get; set; }
 
     public DateTime OrderDate { get; set; }
+
+
+    public List<OrderItemDTO> OrderItems { get; set; } 
 }

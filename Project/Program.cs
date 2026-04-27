@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Project.Services.Interface; 
-using Project.Services.Class;          
-using Project.Repository.Interface; 
+using Project.Services.Interface;
+using Project.Services.Class;
+using Project.Repository.Interface;
 using Project.Repository.Class;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.RateLimiting;
@@ -14,12 +14,17 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails(); 
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
+
 
 builder.Services.AddCors(options =>
 {
@@ -33,25 +38,47 @@ builder.Services.AddCors(options =>
 });
 
 
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
 
+
+
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IWishlistRepository, WishlistRepository>();
+
+
+
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
+
+
 
 builder.Services.AddSingleton<JwtService>();
 
 
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+var keyString = jwtSettings["Key"]
+    ?? throw new Exception("JWT Key is missing in configuration");
+
+var key = Encoding.ASCII.GetBytes(keyString);
+
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -72,15 +99,22 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+
+builder.Services.AddAuthorization();
+
+
 builder.Services.AddRateLimiter(options =>
 {
     options.AddFixedWindowLimiter("fixed", opt =>
     {
-        opt.PermitLimit = 10;             
-        opt.Window = TimeSpan.FromSeconds(10); 
-        opt.QueueLimit = 2;               
+        opt.PermitLimit = 10;
+        opt.Window = TimeSpan.FromSeconds(10);
+        opt.QueueLimit = 2;
     });
 });
+
+
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -89,31 +123,28 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-builder.Services.AddAuthorization();
-
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
 
-app.UseRateLimiter();
 
-app.UseSwagger();
+
+
+app.UseExceptionHandler();       
+
+app.UseCors("AllowReact");         
+
+app.UseRateLimiter();              
+
+app.UseAuthentication();          
+app.UseAuthorization();            
+
+app.UseSwagger();               
 app.UseSwaggerUI();
 
-app.UseCors("AllowReact");
-
-app.UseMiddleware<ExceptionMiddleware>();
-app.UseAuthentication();
-app.UseAuthorization();
-
-
-app.MapControllers();
+app.MapControllers();              
 
 app.Run();

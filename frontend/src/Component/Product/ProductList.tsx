@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import ProductCard, { Product } from "./ProductCard";
 import { useGetProductsQuery } from "./ProductService";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { NAVBAR, SIDEBAR, PAGE } from "./ProductConstant";
+import { NAVBAR, SIDEBAR, PAGE,PRICE, CONTENT } from "./ProductConstant";
 import { ShoppingCart, Search } from "lucide-react";
 import "./ProductList.css";
 
@@ -111,18 +111,18 @@ function ProductList() {
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
-          <option value="default">Sort</option>
-          <option value="low">Price: Low to High</option>
-          <option value="high">Price: High to Low</option>
+          <option value="default">{PRICE.sort}</option>
+          <option value="low">{PRICE.low}</option>
+          <option value="high">{PRICE.high}</option>
         </select>
 
         <div className="flex gap-6 items-center">
           <button className="font-medium" onClick={() => navigate("/login")}>
-            Login
+            {NAVBAR.loginButton}
           </button>
 
           <button className="font-medium" onClick={() => navigate("/orders")}>
-            Orders
+            {NAVBAR.orderbutton}
           </button>
 
           <ShoppingCart
@@ -179,10 +179,10 @@ function ProductList() {
             </div>
           )}
 
-          {error && <div className="error">Failed to load products</div>}
+          {error && <div className="error">{CONTENT.failed}</div>}
 
           {!isLoading && sortedProducts.length === 0 && (
-            <div className="empty">No products found</div>
+            <div className="empty">{CONTENT.emptyMessage}</div>
           )}
 
           {!isLoading && sortedProducts.length > 0 && (

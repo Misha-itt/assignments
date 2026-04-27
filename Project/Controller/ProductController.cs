@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Project.Services.Interface;
 using Project.Models;
  
@@ -14,7 +15,6 @@ public class ProductController : ControllerBase
         _service = service;
     }
 
-   
     [HttpGet]
     public IActionResult Get([FromQuery] ProductQueryParams query)
     {
@@ -22,10 +22,20 @@ public class ProductController : ControllerBase
         return Ok(products);
     }
 
-   
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var product = await _service.GetByIdAsync(id);
+        return product == null ? NotFound() : Ok(product);
+    }
+
+
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public IActionResult Create([FromBody] ProductDTO dto)
     {
+        if (!ModelState.IsValid) 
+            return BadRequest(ModelState);
         var created = _service.Create(dto); 
         return Ok(created);
     }
@@ -33,12 +43,15 @@ public class ProductController : ControllerBase
     [HttpGet("product-sales-summary")]
     public IActionResult GetProductSalesSummary()
     {
+       
         return Ok(_service.GetProductSalesSummary());
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult Update(int id, [FromBody] ProductDTO dto)
     {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
         var updated = _service.Update(id, dto); 
         if (updated == null) return NotFound();
         return Ok(updated);
@@ -46,6 +59,7 @@ public class ProductController : ControllerBase
 
   
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult Delete(int id)
     {
         var deleted = _service.Delete(id);

@@ -24,21 +24,28 @@ namespace Project.Services.Class
             _logger = logger;
         }
 
-        public async Task<User?> RegisterAsync(string uname, string email, string password, string phone, UserRole role = UserRole.Customer)
+        public async Task<UserDTO?> RegisterAsync(RegisterDTO dto)
         {
-            var existingUser = await _userRepository.GetByEmailAsync(email);
-            if (existingUser != null) return null;
+            var existingUser = await _userRepository.GetByEmailAsync(dto.Email);
+            if (existingUser != null)
+            {
+                _logger.LogWarning("Registration attempt with existing email: {Email}", dto.Email);
+                return null;
+            }
 
             var user = new User
             {
-                Uname = uname,
-                Email = email,
-                Phone = phone,
-                Role = role
+                Uname = dto.Uname,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                Role = dto.Role
             };
+         
 
-            user.Password = _passwordHasher.HashPassword(user, password);
-            return await _userRepository.AddUserAsync(user);
+            user.Password = _passwordHasher.HashPassword(user,dto.Password);
+            var created = await _userRepository.AddUserAsync(user);
+            _logger.LogInformation("User registered: {Email}", created.Email);
+            return _mapper.Map<UserDTO>(created);
         }
 
         public async Task<string?> LoginAsync(string email, string password)
@@ -50,15 +57,16 @@ namespace Project.Services.Class
             if (result != PasswordVerificationResult.Success)
                 return null;
 
-            return _jwtService.GenerateToken(user.Email, user.Role);
+            return _jwtService.GenerateToken(user.Email, user.Role, user.Id);
         }
 
        
-        public async Task<List<User>> GetAllUsersAsync()
+        public async Task<List<UserDTO>> GetAllUsersAsync()
         {
 
-          
-            return await _userRepository.GetAllUsersAsync();
+            var users = await _userRepository.GetAllUsersAsync();
+            return _mapper.Map<List<UserDTO>>(users);
+            
         }
     }
 }

@@ -1,0 +1,227 @@
+2026-04-26 11:31:55.963 +05:30 [INF] User profile is available. Using 'C:\Users\misha.agrawal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-26 11:31:56.601 +05:30 [INF] Now listening on: https://localhost:62301
+2026-04-26 11:31:56.613 +05:30 [INF] Now listening on: http://localhost:62302
+2026-04-26 11:31:56.621 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-26 11:31:56.629 +05:30 [INF] Hosting environment: Development
+2026-04-26 11:31:56.639 +05:30 [INF] Content root path: C:\Users\misha.agrawal\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Desktop\ORMS\project
+2026-04-26 12:21:41.307 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-26 12:21:41.353 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ormss' AND TABLE_NAME='__EFMigrationsHistory';
+2026-04-26 12:21:41.377 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-04-26 12:21:41.391 +05:30 [INF] Applying migration '20260426065116_updateChanges'.
+2026-04-26 12:21:41.571 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` DROP COLUMN `ProductId`;
+2026-04-26 12:21:41.626 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` DROP COLUMN `Quantity`;
+2026-04-26 12:21:41.676 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CartItems` DROP COLUMN `Name`;
+2026-04-26 12:21:41.738 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CartItems` DROP COLUMN `Price`;
+2026-04-26 12:21:41.791 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Users` MODIFY COLUMN `Email` varchar(255) CHARACTER SET utf8mb4 NOT NULL;
+2026-04-26 12:21:41.818 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` ADD `Category` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-26 12:21:41.840 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` ADD `Description` longtext CHARACTER SET utf8mb4 NULL;
+2026-04-26 12:21:41.863 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `product` ADD `IsActive` tinyint(1) NOT NULL DEFAULT FALSE;
+2026-04-26 12:21:41.914 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` ADD `AddressId` int NULL;
+2026-04-26 12:21:41.964 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `OrderItem` ADD `ProductName` longtext CHARACTER SET utf8mb4 NOT NULL;
+2026-04-26 12:21:42.011 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Carts` MODIFY COLUMN `UserId` int NOT NULL;
+2026-04-26 12:21:42.056 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CartItems` ADD `Quantity` int NOT NULL DEFAULT 0;
+2026-04-26 12:21:42.086 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Addresses` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Line1` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Line2` longtext CHARACTER SET utf8mb4 NULL,
+    `City` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `State` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Pincode` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Country` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Label` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `IsDefault` tinyint(1) NOT NULL,
+    `UserId` int NOT NULL,
+    CONSTRAINT `PK_Addresses` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Addresses_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-26 12:21:42.120 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Wishlists` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `UserId` int NOT NULL,
+    CONSTRAINT `PK_Wishlists` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Wishlists_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-26 12:21:42.154 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `WishlistItems` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `WishlistId` int NOT NULL,
+    `ProductId` int NOT NULL,
+    CONSTRAINT `PK_WishlistItems` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_WishlistItems_Wishlists_WishlistId` FOREIGN KEY (`WishlistId`) REFERENCES `Wishlists` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_WishlistItems_product_ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-04-26 12:21:42.166 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Computers', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 1;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.172 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Accessories', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 2;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.178 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Phones', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 3;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.183 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Accessories', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 4;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.188 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 5;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.194 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 6;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.200 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 7;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.205 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 8;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.211 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 9;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.217 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 10;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.222 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 11;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.228 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 12;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.234 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 13;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.239 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 14;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.245 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 15;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.250 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 16;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.256 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 17;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.261 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 18;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.267 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 19;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.273 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 20;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.279 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 21;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.284 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 22;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.290 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 23;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.296 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 24;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.302 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 25;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.308 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 26;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.314 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 27;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.320 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 28;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.326 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 29;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.332 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 30;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.337 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 31;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.343 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 32;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.349 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 33;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.355 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE `product` SET `Category` = 'Peripherals', `Description` = NULL, `IsActive` = TRUE
+WHERE `Id` = 34;
+SELECT ROW_COUNT();
+2026-04-26 12:21:42.393 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_Users_Email` ON `Users` (`Email`);
+2026-04-26 12:21:42.417 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Orders_AddressId` ON `Orders` (`AddressId`);
+2026-04-26 12:21:42.438 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_Carts_UserId` ON `Carts` (`UserId`);
+2026-04-26 12:21:42.456 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Addresses_UserId` ON `Addresses` (`UserId`);
+2026-04-26 12:21:42.475 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_WishlistItems_ProductId` ON `WishlistItems` (`ProductId`);
+2026-04-26 12:21:42.494 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_WishlistItems_WishlistId_ProductId` ON `WishlistItems` (`WishlistId`, `ProductId`);
+2026-04-26 12:21:42.513 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_Wishlists_UserId` ON `Wishlists` (`UserId`);
+2026-04-26 12:21:42.565 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Carts` ADD CONSTRAINT `FK_Carts_Users_UserId` FOREIGN KEY (`UserId`) REFERENCES `Users` (`Id`) ON DELETE CASCADE;
+2026-04-26 12:21:42.629 +05:30 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Orders` ADD CONSTRAINT `FK_Orders_Addresses_AddressId` FOREIGN KEY (`AddressId`) REFERENCES `Addresses` (`Id`) ON DELETE SET NULL;
+2026-04-26 12:21:42.636 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260426065116_updateChanges', '8.0.0');
